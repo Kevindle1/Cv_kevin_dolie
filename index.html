@@ -203,6 +203,33 @@
     border:1px solid var(--hairline-strong); padding:9px 14px; border-radius:2px;
   }
 
+  /* ===== bloc IA mis en valeur ===== */
+  .ai-block{
+    grid-column:1 / -1; margin-top:8px;
+    background:var(--bg-raise);
+    border:1px solid var(--hairline-strong);
+    border-left:3px solid var(--gold);
+    border-radius:3px; padding:30px 34px;
+    position:relative; overflow:hidden;
+  }
+  .ai-block::before{
+    content:'AI'; position:absolute; top:-14px; right:12px;
+    font-family:var(--disp); font-weight:800; font-size:120px;
+    color:var(--gold); opacity:.06; letter-spacing:-4px; pointer-events:none;
+  }
+  .ai-block .ai-eyebrow{
+    font-family:var(--mono); font-size:12px; letter-spacing:1.6px; text-transform:uppercase;
+    color:var(--gold); margin-bottom:6px;
+  }
+  .ai-block h3{
+    font-family:var(--disp); font-weight:700; font-size:22px; color:var(--paper);
+    border:none; padding:0; margin-bottom:20px; letter-spacing:.2px; text-transform:none;
+  }
+  .ai-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px 34px;}
+  @media (max-width:760px){ .ai-grid{grid-template-columns:1fr;} }
+  .ai-block .skill-line{margin-bottom:0;}
+  .ai-block .skill-line strong{color:var(--paper); font-weight:700;}
+
   /* ===== formation ===== */
   .edu-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px;}
   @media (max-width:760px){ .edu-grid{grid-template-columns:1fr;} }
@@ -623,8 +650,21 @@
           <ul class="tech-tags">
             <li>Angular</li><li>React</li><li>Node.js</li><li>.NET</li>
             <li>PHP / Laravel</li><li>Adobe Experience Manager</li><li>MySQL</li>
-            <li>Figma</li><li>Suite MS 365</li><li>RGAA / WCAG</li><li>IA générative appliquée</li>
+            <li>Figma</li><li>Suite MS 365</li><li>RGAA / WCAG</li>
           </ul>
+        </div>
+
+        <div class="ai-block reveal">
+          <p class="ai-eyebrow">Expertise transverse</p>
+          <h3>Intelligence artificielle</h3>
+          <div class="ai-grid">
+            <p class="skill-line"><span class="sym" aria-hidden="true">→</span> <span><strong>IA générative &amp; LLM</strong> — prompt engineering, ChatGPT, Claude, Gemini (rédaction, analyse, génération de contenu)</span></p>
+            <p class="skill-line"><span class="sym" aria-hidden="true">→</span> <span><strong>IA agentique</strong> — agents autonomes, orchestration multi-agents, automatisation de tâches (Claude Code, MCP, n8n)</span></p>
+            <p class="skill-line"><span class="sym" aria-hidden="true">→</span> <span><strong>Intégration en entreprise</strong> — insertion de l'IA dans les workflows métier, automatisation de process</span></p>
+            <p class="skill-line"><span class="sym" aria-hidden="true">→</span> <span><strong>Développement assisté par IA</strong> — GitHub Copilot, Cursor, Claude Code ; création d'applications sur API d'IA</span></p>
+            <p class="skill-line"><span class="sym" aria-hidden="true">→</span> <span><strong>Accompagnement &amp; formation</strong> — montée en compétence des équipes, cadrage des usages de l'IA</span></p>
+            <p class="skill-line"><span class="sym" aria-hidden="true">→</span> <span><strong>Veille active</strong> — suivi continu de l'écosystème IA et de ses applications concrètes</span></p>
+          </div>
         </div>
       </div>
     </div>
