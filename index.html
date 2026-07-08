@@ -375,6 +375,16 @@
     .value-card:hover{transform:none;}
     .read-progress{display:none;}
   }
+  /* ===== IMPRESSION / EXPORT PDF : tout visible, pas d'animation ===== */
+  @media print{
+    *,*::before,*::after{animation:none !important; transition:none !important; -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important;}
+    .hero .stamp-row,.hero h1,.hero .hero-role,.hero .hero-pitch,.hero .cta-row{opacity:1 !important;}
+    .reveal{opacity:1 !important; transform:none !important;}
+    .mission-head .ref{opacity:1 !important;}
+    .read-progress,nav.main-nav,.cta-row{display:none !important;}
+    section{page-break-inside:avoid;}
+    a{text-decoration:none;}
+  }
   /* ===== AJUSTEMENTS MOBILES GLOBAUX ===== */
   @media (max-width:640px){
     body{font-size:16px;}
@@ -439,7 +449,7 @@
         et j'ai porté seul les conséquences business de mes décisions. Trois strates, une trajectoire.
       </p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="CV_Kevin_Dolie.pdf" download>Télécharger le CV (PDF)</a>
+        <a class="btn btn-primary" href="assets/CV_Kevin_Dolie.pdf" download="CV_Kevin_Dolie.pdf">Télécharger le CV (PDF)</a>
         <a class="btn btn-ghost" href="#contact">Prendre contact</a>
       </div>
       </div>
