@@ -866,41 +866,6 @@ nav.main-nav a.is-active{ color:var(--blue); background:var(--blue-soft); }
 
 .ca-card.is-wide{ grid-column:1 / -1; }
 
-.ca-solutions{
-  background:var(--white);
-  border:1px solid var(--grey-200);
-  border-radius:var(--r-lg);
-  padding:36px;
-}
-.ca-solutions h3{ font-size:20px; margin-bottom:6px; }
-.ca-solutions p.intro{ color:var(--ink-soft); font-size:14.5px; margin-bottom:24px; }
-.solutions-list{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:14px;
-}
-@media (max-width:860px){ .solutions-list{ grid-template-columns:repeat(2, 1fr); } }
-@media (max-width:560px){ .solutions-list{ grid-template-columns:1fr; } }
-.solutions-list li{
-  display:flex;
-  align-items:flex-start;
-  gap:10px;
-  font-size:14px;
-  color:var(--ink-soft);
-  background:var(--grey-50);
-  border:1px solid var(--grey-150);
-  border-radius:var(--r-sm);
-  padding:14px 16px;
-}
-.solutions-list li::before{
-  content:"";
-  flex:0 0 auto;
-  width:7px; height:7px;
-  margin-top:6px;
-  border-radius:50%;
-  background:var(--green);
-}
-
 
 /* ==========================================================================
    07. INTELLIGENCE ARTIFICIELLE — schéma horizontal
@@ -1784,22 +1749,6 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
             <p>Un suivi fiabilisé qui remplace un tableur, et une recommandation immédiate en rendez-vous, là où le conseiller devait auparavant arbitrer seul.</p>
           </div>
         </article>
-      </div>
-
-      <div class="ca-solutions reveal">
-        <h3>Ce que ces trois chantiers ont produit concrètement</h3>
-        <p class="intro">Un outil de pilotage, une équipe formée, un programme de modernisation — et, en filigrane, tout ce qui a dû être construit pour les rendre possibles :</p>
-        <ul class="solutions-list">
-          <li>Outil de pilotage des demandes marketing</li>
-          <li>Bibliothèque de composants Figma partagée</li>
-          <li>Tableaux de bord de suivi de projets</li>
-          <li>Automatisations de reporting récurrent</li>
-          <li>Workflows n8n connectant les outils métier</li>
-          <li>Assistants internes basés sur l'IA générative</li>
-          <li>Bots de notification et de suivi d'activité</li>
-          <li>Gabarits et guides d'onboarding digital</li>
-          <li>Scripts d'automatisation de tâches répétitives</li>
-        </ul>
       </div>
 
       <p class="pull-quote reveal">Aucun de ces trois chantiers n'était au planning avant d'être repéré sur le terrain. C'est ce réflexe-là, plus que les outils eux-mêmes, qui se répète d'un projet à l'autre.</p>
