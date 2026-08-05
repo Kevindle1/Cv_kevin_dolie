@@ -693,6 +693,12 @@ nav.main-nav a.is-active{ color:var(--blue); background:var(--blue-soft); }
 
 .adn-text .narrative-block{ margin-bottom:40px; }
 
+.adn-side{
+  position:sticky;
+  top:96px;
+}
+@media (max-width:980px){ .adn-side{ position:static; } }
+
 .stat-card{
   background:var(--ink);
   color:var(--white);
@@ -1554,7 +1560,7 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
   <section class="hero" id="hero">
     <div class="hero-bg" aria-hidden="true"></div>
     <div class="wrap">
-      <p class="hero-eyebrow"><span class="dot" aria-hidden="true"></span>Dossier de transformation — Crédit Agricole</p>
+      <p class="hero-eyebrow"><span class="dot" aria-hidden="true"></span>Candidature — Crédit Agricole Toulouse 31</p>
       <h1>Kevin Dolié</h1>
       <div class="hero-roles" aria-label="Transformation, Innovation, Intelligence Artificielle, Management">
         <ul aria-hidden="true">
@@ -1571,7 +1577,6 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
       </p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#qui-suis-je">Découvrir mon parcours ↓</a>
-        <a class="btn btn-ghost" href="#conclusion">Aller directement à l'essentiel</a>
       </div>
     </div>
     <div class="scroll-cue" aria-hidden="true">
@@ -1587,16 +1592,16 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
     <div class="wrap">
       <div class="section-head reveal">
         <p class="eyebrow">01 · Qui suis-je</p>
-        <h2 class="sec-title">Je ne suis pas venu vous raconter un CV.<br>Je suis venu vous raconter une histoire.</h2>
-        <p class="sec-lede">Une trajectoire ne se résume pas à une liste de postes. Elle se comprend à travers ce qui l'a construite — et ce qui la relie, d'un bout à l'autre.</p>
+        <h2 class="sec-title">Ceci n'est pas un CV.<br>C'est l'histoire d'une même méthode, appliquée à trois terrains différents.</h2>
+        <p class="sec-lede">Un parcours ne se juge pas à la liste des postes occupés, mais à ce qui reste constant quand le contexte change. Voici ce qui, chez moi, n'a jamais changé.</p>
       </div>
 
       <div class="narrative-block reveal">
-        <p>Pendant huit ans, j'ai porté l'uniforme. Pas pour fuir un métier, mais pour en apprendre un que ni une école de commerce ni une école d'ingénieur n'enseigne réellement : <strong>tenir une mission quand tout se complique</strong>, encadrer des femmes et des hommes dans l'incertitude, et prendre une décision quand aucune décision n'est parfaite.</p>
-        <p>Ce n'est pas une anecdote biographique que je place en préambule pour donner du relief à un profil. C'est le socle sur lequel tout le reste s'est construit.</p>
+        <p>Huit ans durant, l'uniforme a été le premier métier — jusqu'à l'encadrement de 150 personnes sur le terrain. Aucune école de commerce ni école d'ingénieur n'enseigne ce que ce métier impose au quotidien : <strong>tenir une mission quand tout se complique</strong>, faire progresser une équipe dans l'incertitude, décider quand aucune option n'est parfaite.</p>
+        <p>Ces huit années n'introduisent pas ce dossier pour lui donner du relief. Elles en sont le socle : chaque section qui suit — le Crédit Agricole, l'intelligence artificielle, le management — n'est qu'une nouvelle application de ce qui a été appris là.</p>
       </div>
 
-      <p class="eyebrow" style="margin-top:56px;">Ce que huit années d'armée m'ont réellement appris</p>
+      <p class="eyebrow" style="margin-top:56px;">Ce que huit années d'encadrement ont réellement transmis</p>
       <div class="lessons-grid reveal-stagger">
         <article class="lesson-card">
           <span class="num">01</span>
@@ -1606,12 +1611,12 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
         <article class="lesson-card">
           <span class="num">02</span>
           <h3>Résilience</h3>
-          <p>Encaisser l'imprévu, se relever, repartir. Un projet qui échoue n'est jamais une fin — c'est une donnée de plus.</p>
+          <p>Un projet qui échoue n'est jamais une fin. C'est une donnée de plus pour la tentative suivante.</p>
         </article>
         <article class="lesson-card">
           <span class="num">03</span>
           <h3>Leadership</h3>
-          <p>Diriger, ce n'est pas donner des ordres. C'est donner du sens et être le premier à s'exposer.</p>
+          <p>Diriger n'est pas donner des ordres. C'est donner du sens et être le premier exposé quand ça se complique.</p>
         </article>
         <article class="lesson-card">
           <span class="num">04</span>
@@ -1626,30 +1631,32 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
         <article class="lesson-card">
           <span class="num">06</span>
           <h3>Gestion du stress</h3>
-          <p>Rester lucide quand la pression monte. C'est dans les moments critiques que se révèle la vraie valeur ajoutée.</p>
+          <p>La pression ne se subit pas, elle se structure. C'est dans les moments critiques que se voit la valeur réelle.</p>
         </article>
         <article class="lesson-card">
           <span class="num">07</span>
           <h3>Organisation</h3>
-          <p>Anticiper, planifier, structurer. La rigueur méthodologique transforme une idée en résultat.</p>
+          <p>Anticiper, planifier, structurer. La rigueur méthodologique transforme une idée en résultat livré.</p>
         </article>
         <article class="lesson-card">
           <span class="num">08</span>
           <h3>Engagement</h3>
-          <p>S'investir totalement, sans réserve, sans calcul. Un choix qu'on renouvelle chaque jour, pas une posture.</p>
+          <p>S'investir sans réserve, sans calcul. Un choix renouvelé chaque jour, jamais une posture figée.</p>
         </article>
       </div>
+
+      <p class="pull-quote reveal">Ces huit lignes ne sont pas restées dans l'armée. On les retrouve, presque telles quelles, dans un outil de pilotage marketing, un cursus de formation Figma et un programme de transformation interne — trois exemples détaillés plus bas.</p>
 
       <div class="story-columns">
         <div class="story-col reveal">
           <span class="tag">La bascule</span>
           <h3>Une reconversion, pas une rupture</h3>
-          <p>En quittant l'armée, je n'ai pas changé de valeurs. J'ai changé de terrain d'application. J'ai choisi le numérique parce que c'est aujourd'hui le théâtre où se jouent les transformations les plus décisives — celles des organisations, des métiers et des usages. La discipline opérationnelle apprise sur le terrain s'est naturellement transposée à la conduite de projets digitaux : même exigence, même sens du résultat, même refus de l'à-peu-près.</p>
+          <p>Changer d'uniforme pour un poste au Crédit Agricole n'a rien changé aux repères ; seul le terrain d'application a évolué. Le numérique a été choisi parce que les organisations s'y transforment vite, et que la discipline opérationnelle du terrain — tenir un délai, livrer sous contrainte, ne jamais transiger sur la qualité — s'y transpose sans perte.</p>
         </div>
         <div class="story-col is-blue reveal">
           <span class="tag">Aujourd'hui</span>
-          <h3>Le Crédit Agricole, un terrain à la mesure de cette conviction</h3>
-          <p>C'est au Crédit Agricole que j'ai trouvé ce terrain d'application. Une organisation centenaire, un maillage territorial unique, une culture de la proximité — et une conviction personnelle : la transformation ne se décrète pas depuis une slide. Elle se construit avec les équipes, sur le terrain, projet après projet, jusqu'à ce que l'usage devienne un réflexe.</p>
+          <h3>Le Crédit Agricole, un terrain à la mesure de cette exigence</h3>
+          <p>Une organisation centenaire, un maillage territorial unique, une culture de la proximité : le Crédit Agricole offre l'échelle qui manquait. Les équipes n'ont pas besoin d'un énième plan de transformation théorique — elles ont besoin d'outils qui tiennent, de formations qui s'ancrent et d'un accompagnement qui va jusqu'au bout. C'est précisément ce que les trois prochaines sections démontrent.</p>
         </div>
       </div>
     </div>
@@ -1662,8 +1669,8 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
     <div class="wrap">
       <div class="section-head reveal">
         <p class="eyebrow">02 · Mon ADN</p>
-        <h2 class="sec-title">Je vois des problèmes là où d'autres voient des habitudes.</h2>
-        <p class="sec-lede">Face à un processus, une interface ou une friction que tout le monde a fini par accepter, je me pose systématiquement la même question : pourquoi fait-on ça comme ça ? La réponse « on a toujours fait ainsi » n'est jamais suffisante.</p>
+        <h2 class="sec-title">Là où d'autres voient une habitude, un problème est déjà visible.</h2>
+        <p class="sec-lede">Face à un processus ou une friction que tout le monde a fini par accepter, une question revient systématiquement : pourquoi fait-on ça comme ça ? « On a toujours fait ainsi » n'a jamais été une réponse suffisante.</p>
       </div>
 
       <div class="adn-layout">
@@ -1689,8 +1696,8 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
         <div class="adn-side">
           <div class="stat-card reveal">
             <span class="stat-number" data-count="80" data-suffix="%">0%</span>
-            <p class="stat-label">des projets que j'ai menés au Crédit Agricole sont partis d'un constat que j'ai fait moi-même — pas d'une commande, pas d'un cahier des charges.</p>
-            <p class="stat-follow">Une friction observée sur le terrain, un irritant remonté par un conseiller, une tâche répétitive identifiée en marge d'un projet. Je ne suis pas quelqu'un qui attend qu'on lui demande une solution — je suis quelqu'un qui la propose avant qu'on ait fini de formuler le problème.</p>
+            <p class="stat-label">des projets menés au Crédit Agricole sont partis d'un constat de terrain — pas d'une commande, pas d'un cahier des charges.</p>
+            <p class="stat-follow">Impulsion Marketing en est l'exemple : personne ne l'a demandé, une friction observée l'a rendu nécessaire. Le détail de ce projet suit dans la section Crédit Agricole. La solution s'y construit avant que la demande ne soit formulée — c'est le réflexe, pas l'exception.</p>
           </div>
         </div>
       </div>
@@ -1704,8 +1711,8 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
     <div class="wrap">
       <div class="section-head reveal">
         <p class="eyebrow">03 · Crédit Agricole</p>
-        <h2 class="sec-title">Sur le terrain, je transforme les irritants en solutions.</h2>
-        <p class="sec-lede">Je n'attends pas de brief. J'identifie moi-même les besoins, je construis la réponse, et je l'accompagne jusqu'à son adoption réelle par les équipes.</p>
+        <h2 class="sec-title">Trois chantiers, une même trajectoire : du constat à l'usage installé.</h2>
+        <p class="sec-lede">Aucun des trois projets ci-dessous n'a démarré sur commande. Chacun part d'un irritant repéré sur le terrain, se construit avec les équipes concernées, et se mesure à l'adoption qu'il obtient une fois le lancement passé.</p>
       </div>
 
       <div class="ca-cards reveal-stagger">
@@ -1738,16 +1745,20 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
             <span class="ca-index">02</span>
           </div>
           <div class="ca-block">
+            <span class="lbl">Contexte</span>
+            <p>Les maquettes circulaient en fichiers statiques, sans version partagée : chaque échange créatif perdait un aller-retour à expliquer ce qui avait changé.</p>
+          </div>
+          <div class="ca-block">
             <span class="lbl">Formation</span>
-            <p>J'ai formé les équipes à Figma, de la prise en main jusqu'aux usages avancés de collaboration en temps réel.</p>
+            <p>Un cursus construit et animé en interne, de la prise en main jusqu'aux usages avancés de collaboration en temps réel.</p>
           </div>
           <div class="ca-block">
             <span class="lbl">Accompagnement</span>
-            <p>Un accompagnement individuel et collectif pour ancrer durablement les nouveaux usages dans les pratiques quotidiennes.</p>
+            <p>Un suivi individuel et collectif dans la durée, pour ancrer le réflexe au-delà de la formation initiale.</p>
           </div>
           <div class="ca-block">
-            <span class="lbl">Adoption</span>
-            <p>Passage d'un outil confidentiel à un standard d'équipe, avec une autonomie totale sur la conception des maquettes.</p>
+            <span class="lbl">Impact</span>
+            <p>Figma est passé d'outil confidentiel à standard d'équipe : les collaborateurs formés conçoivent désormais leurs maquettes en autonomie complète.</p>
           </div>
         </article>
 
@@ -1756,15 +1767,24 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
             <h3>Transformation CSCA</h3>
             <span class="ca-index">03</span>
           </div>
-          <p style="font-size:15px; color:var(--ink-soft); max-width:760px; line-height:1.7;">
-            Un programme de transformation transverse visant à moderniser les outils, les process et les usages numériques au sein de la structure. J'y ai porté plusieurs chantiers, de l'audit des irritants jusqu'à la mise en œuvre des solutions retenues — avec, à chaque étape, le même principe : <strong>partir du terrain, pas d'une intuition de bureau.</strong>
-          </p>
+          <div class="ca-block">
+            <span class="lbl">Contexte</span>
+            <p>Un programme de transformation transverse, à l'échelle de la structure, visant à moderniser des outils et des process installés depuis longtemps.</p>
+          </div>
+          <div class="ca-block">
+            <span class="lbl">Rôle</span>
+            <p>Plusieurs chantiers portés de bout en bout, de l'audit des irritants jusqu'à la mise en œuvre des solutions retenues.</p>
+          </div>
+          <div class="ca-block">
+            <span class="lbl">Principe</span>
+            <p>Le même à chaque étape : partir de ce que vivent les équipes sur le terrain, jamais d'une intuition de bureau.</p>
+          </div>
         </article>
       </div>
 
       <div class="ca-solutions reveal">
-        <h3>Toutes les solutions développées</h3>
-        <p class="intro">Une constante relie chacune d'entre elles : c'est moi qui ai identifié le besoin, avant qu'il ne soit formalisé par quiconque.</p>
+        <h3>Ce que ces trois chantiers ont produit concrètement</h3>
+        <p class="intro">Un outil de pilotage, une équipe formée, un programme de modernisation — et, en filigrane, tout ce qui a dû être construit pour les rendre possibles :</p>
         <ul class="solutions-list">
           <li>Outil de pilotage des demandes marketing</li>
           <li>Bibliothèque de composants Figma partagée</li>
@@ -1778,7 +1798,7 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
         </ul>
       </div>
 
-      <p class="pull-quote reveal">« J'identifie moi-même les besoins. »</p>
+      <p class="pull-quote reveal">Aucun de ces trois chantiers n'était au planning avant d'être repéré sur le terrain. C'est ce réflexe-là, plus que les outils eux-mêmes, qui se répète d'un projet à l'autre.</p>
     </div>
   </section>
 
@@ -1789,16 +1809,16 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
     <div class="wrap">
       <div class="section-head reveal">
         <p class="eyebrow is-green">04 · Intelligence Artificielle</p>
-        <h2 class="sec-title">Je ne suis pas fasciné par ChatGPT.<br>Je suis fasciné par ce que l'IA peut transformer.</h2>
-        <p class="sec-lede">Un prompt n'est qu'un moyen. Ce n'est pas une compétence différenciante, encore moins une stratégie. La vraie valeur ne se trouve jamais dans l'outil.</p>
+        <h2 class="sec-title">ChatGPT n'est pas le sujet.<br>Ce que l'IA transforme dans une organisation, si.</h2>
+        <p class="sec-lede">Un prompt bien tourné n'est pas une compétence différenciante — encore moins une stratégie. La valeur ne se trouve jamais dans l'outil. Elle se trouve dans cinq endroits précis :</p>
       </div>
 
       <ul class="ia-value-list reveal-stagger">
-        <li><strong>Les usages</strong>ce que l'on fait vraiment, au quotidien</li>
-        <li><strong>Les process</strong>comment le travail est réellement organisé</li>
-        <li><strong>L'accompagnement</strong>rendre chacun autonome, pas dépendant</li>
-        <li><strong>La conduite du changement</strong>faire accepter avant de faire adopter</li>
-        <li><strong>L'adoption</strong>l'usage qui reste, une fois l'enthousiasme retombé</li>
+        <li><strong>Les usages</strong> — ce que l'on fait vraiment, au quotidien</li>
+        <li><strong>Les process</strong> — comment le travail est réellement organisé</li>
+        <li><strong>L'accompagnement</strong> — rendre chacun autonome, pas dépendant</li>
+        <li><strong>La conduite du changement</strong> — faire accepter avant de faire adopter</li>
+        <li><strong>L'adoption</strong> — l'usage qui reste, une fois l'enthousiasme retombé</li>
       </ul>
 
       <p class="eyebrow is-green" style="margin-top:8px;">De la friction à la valeur</p>
@@ -1810,7 +1830,7 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
         <div class="pipeline-step"><span class="pnum">05</span><h4>Valeur</h4><p>Un gain mesurable, durable, adopté</p></div>
       </div>
 
-      <p class="pull-quote is-green ia-close reveal">L'IA n'est intéressante que si elle change durablement une manière de travailler. Le reste n'est que démonstration.</p>
+      <p class="pull-quote is-green ia-close reveal">Ce schéma n'est pas théorique : les projets présentés dans la section suivante — un agent vocal, un système d'agents autonomes — en sont l'application directe. Et cette même grille de lecture est celle qu'un manager doit tenir pour son équipe : une IA qui ne change aucun usage n'a rien transformé, elle a juste occupé du temps.</p>
     </div>
   </section>
 
@@ -1821,8 +1841,8 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
     <div class="wrap">
       <div class="section-head reveal">
         <p class="eyebrow">05 · Mes projets</p>
-        <h2 class="sec-title">Des idées, transformées en produits.</h2>
-        <p class="sec-lede">Chaque projet est né de la même méthode : un problème réel, une vision claire, et la volonté d'aller jusqu'au bout — pas de s'arrêter à l'idée.</p>
+        <h2 class="sec-title">Le même schéma Problème → Process → IA → Valeur, appliqué hors les murs.</h2>
+        <p class="sec-lede">Ces projets n'ont pas été commandés par un employeur : ils ont été construits sur le temps personnel, pour vérifier qu'une méthode tient au-delà d'un seul contexte. Aucun n'est resté à l'état d'idée.</p>
       </div>
 
       <div class="projects-grid reveal-stagger">
@@ -1833,11 +1853,11 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
             <h3>Solayia</h3>
           </div>
           <div class="p-body">
-            <div class="p-row"><span class="lbl">Pourquoi</span><p>Parce que les petites structures n'ont ni le temps ni le budget pour se doter d'outils digitaux sur mesure.</p></div>
-            <div class="p-row"><span class="lbl">Vision</span><p>Rendre la technologie et l'IA accessibles aux indépendants et petites entreprises, sans complexité inutile.</p></div>
-            <div class="p-row"><span class="lbl">Objectif</span><p>Concevoir des solutions digitales et des automatisations IA clé en main, pensées pour des non-experts.</p></div>
+            <div class="p-row"><span class="lbl">Pourquoi</span><p>Les indépendants et petites structures ont besoin d'outils digitaux et d'automatisations IA — mais rarement le temps ni le budget pour se les faire construire sur mesure.</p></div>
+            <div class="p-row"><span class="lbl">Vision</span><p>Rendre la technologie et l'IA accessibles à des non-experts, sans complexité inutile ni jargon.</p></div>
+            <div class="p-row"><span class="lbl">Objectif</span><p>Concevoir des solutions digitales et des automatisations clé en main, du premier échange client jusqu'à la mise en production.</p></div>
             <div class="p-row"><span class="lbl">Compétences développées</span><p>Conception produit, développement full-stack, automatisation IA, relation client, pilotage de projet en autonomie totale.</p></div>
-            <div class="p-row"><span class="lbl">Valeur</span><p>Prouver qu'une vision peut devenir une entreprise, de l'idée jusqu'au premier client.</p></div>
+            <div class="p-row"><span class="lbl">Ce que ça prouve</span><p>Qu'une vision devient une entreprise seulement si elle survit au premier client réel — pas au premier prototype.</p></div>
           </div>
         </article>
 
@@ -1847,11 +1867,11 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
             <h3>KevinOS</h3>
           </div>
           <div class="p-body">
-            <div class="p-row"><span class="lbl">Pourquoi</span><p>Parce que je voulais un système de pilotage personnel qui centralise mes projets, mes idées et mes priorités.</p></div>
-            <div class="p-row"><span class="lbl">Vision</span><p>Un véritable système d'exploitation personnel : une manière structurée de penser, décider et exécuter.</p></div>
-            <div class="p-row"><span class="lbl">Objectif</span><p>Construire un outil — et une méthode — qui organise ma charge mentale comme une entreprise organise sa feuille de route.</p></div>
+            <div class="p-row"><span class="lbl">Pourquoi</span><p>Piloter plusieurs projets de front (Crédit Agricole, Solayia, veille IA) sans système commun faisait perdre plus de temps qu'aucun des projets eux-mêmes.</p></div>
+            <div class="p-row"><span class="lbl">Vision</span><p>Un système d'exploitation personnel : une manière structurée de penser, décider et exécuter, écrite noir sur blanc plutôt que gardée en tête.</p></div>
+            <div class="p-row"><span class="lbl">Objectif</span><p>Un outil — et une méthode — qui organise la charge mentale comme une entreprise organise sa feuille de route.</p></div>
             <div class="p-row"><span class="lbl">Compétences développées</span><p>Architecture de systèmes, gestion de la donnée personnelle, discipline méthodologique, automatisation.</p></div>
-            <div class="p-row"><span class="lbl">Valeur</span><p>Démontrer que la rigueur qu'on attend d'un manager s'applique d'abord à soi-même.</p></div>
+            <div class="p-row"><span class="lbl">Ce que ça prouve</span><p>La rigueur qu'on attend d'un manager commence par s'appliquer à soi-même, avant de s'appliquer à une équipe.</p></div>
           </div>
         </article>
 
@@ -1861,11 +1881,11 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
             <h3>IA téléphonique</h3>
           </div>
           <div class="p-body">
-            <div class="p-row"><span class="lbl">Pourquoi</span><p>Parce qu'une grande partie des appels entrants sont répétitifs et pourraient être traités sans intervention humaine.</p></div>
-            <div class="p-row"><span class="lbl">Vision</span><p>Un premier niveau de contact intelligent, disponible en continu, qui libère du temps humain pour les sujets à forte valeur ajoutée.</p></div>
-            <div class="p-row"><span class="lbl">Objectif</span><p>Développer un agent vocal IA capable de qualifier, répondre et orienter les appels entrants.</p></div>
+            <div class="p-row"><span class="lbl">Pourquoi</span><p>Une large part des appels entrants sont répétitifs — un premier niveau de contact qualifié peut les absorber sans dégrader l'expérience.</p></div>
+            <div class="p-row"><span class="lbl">Vision</span><p>Un accueil intelligent disponible en continu, qui rend du temps humain pour les échanges à forte valeur ajoutée.</p></div>
+            <div class="p-row"><span class="lbl">Objectif</span><p>Un agent vocal capable de qualifier, répondre et orienter un appel entrant sans script rigide.</p></div>
             <div class="p-row"><span class="lbl">Compétences développées</span><p>Traitement du langage naturel, conception de flux conversationnels, intégration d'API, expérience utilisateur vocale.</p></div>
-            <div class="p-row"><span class="lbl">Valeur</span><p>Montrer que l'automatisation intelligente peut améliorer la qualité de service — pas seulement réduire les coûts.</p></div>
+            <div class="p-row"><span class="lbl">Ce que ça prouve</span><p>L'automatisation intelligente peut améliorer la qualité de service perçue — pas seulement réduire un coût de traitement.</p></div>
           </div>
         </article>
 
@@ -1875,11 +1895,11 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
             <h3>IA agentique</h3>
           </div>
           <div class="p-body">
-            <div class="p-row"><span class="lbl">Pourquoi</span><p>Parce que l'avenir de l'IA n'est pas dans la réponse à une question, mais dans l'exécution autonome d'une tâche.</p></div>
-            <div class="p-row"><span class="lbl">Vision</span><p>Des agents capables d'enchaîner des actions, de décider, de s'adapter — pas seulement de générer du texte.</p></div>
-            <div class="p-row"><span class="lbl">Objectif</span><p>Concevoir des architectures d'agents IA autonomes capables d'exécuter des processus métier de bout en bout.</p></div>
+            <div class="p-row"><span class="lbl">Pourquoi</span><p>Générer une réponse ne suffit plus : la prochaine génération d'usages IA exécute une tâche de bout en bout, sans supervision à chaque étape.</p></div>
+            <div class="p-row"><span class="lbl">Vision</span><p>Des agents capables d'enchaîner des actions, de décider, de s'adapter à un contexte qui change — pas seulement de produire du texte.</p></div>
+            <div class="p-row"><span class="lbl">Objectif</span><p>Concevoir des architectures d'agents autonomes exécutant un processus métier complet, sans intervention à chaque relais.</p></div>
             <div class="p-row"><span class="lbl">Compétences développées</span><p>Architecture agentique, orchestration de workflows IA, prompt engineering avancé, intégration systèmes.</p></div>
-            <div class="p-row"><span class="lbl">Valeur</span><p>Me positionner en avance sur la prochaine génération d'usages IA en entreprise.</p></div>
+            <div class="p-row"><span class="lbl">Ce que ça prouve</span><p>Une compréhension de l'IA d'entreprise construite avant que le sujet ne devienne un standard de poste.</p></div>
           </div>
         </article>
 
@@ -1889,11 +1909,11 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
             <h3>n8n</h3>
           </div>
           <div class="p-body">
-            <div class="p-row"><span class="lbl">Pourquoi</span><p>Parce que la majorité des tâches répétitives d'une organisation peuvent être automatisées sans développement lourd.</p></div>
+            <div class="p-row"><span class="lbl">Pourquoi</span><p>La majorité des tâches répétitives d'une organisation n'ont pas besoin d'un développement lourd pour disparaître — juste d'un workflow bien conçu. C'est le même outil que ceux listés dans les solutions Crédit Agricole plus haut : ici, il est appliqué au fonctionnement de Solayia.</p></div>
             <div class="p-row"><span class="lbl">Vision</span><p>Faire de l'automatisation un réflexe du quotidien, pas un projet exceptionnel réservé à la DSI.</p></div>
-            <div class="p-row"><span class="lbl">Objectif</span><p>Déployer des workflows d'automatisation connectant les outils métier, sans dépendance à un développement sur-mesure coûteux.</p></div>
+            <div class="p-row"><span class="lbl">Objectif</span><p>Des workflows connectant les outils métier entre eux, sans dépendance à un développement sur-mesure coûteux.</p></div>
             <div class="p-row"><span class="lbl">Compétences développées</span><p>Automatisation no-code / low-code, intégration d'API, cartographie de process, optimisation opérationnelle.</p></div>
-            <div class="p-row"><span class="lbl">Valeur</span><p>Multiplier les gains de temps à l'échelle d'une équipe, pour un investissement minimal.</p></div>
+            <div class="p-row"><span class="lbl">Ce que ça prouve</span><p>Le même réflexe fonctionne à deux échelles : une caisse régionale et une petite structure n'ont, au fond, pas des besoins si différents.</p></div>
           </div>
         </article>
 
@@ -1908,36 +1928,37 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
     <div class="wrap">
       <div class="section-head reveal">
         <p class="eyebrow">06 · Pourquoi le management</p>
-        <h2 class="sec-title">Je ne veux pas manager pour avoir une équipe.</h2>
+        <h2 class="sec-title">Une équipe ne se dirige pas. Son impact se multiplie.</h2>
+        <p class="sec-lede">Le cursus Figma cité plus haut n'était pas un projet outil : c'était un premier test grandeur nature de ce qu'un collectif rend possible une fois formé et rendu autonome. Cinq principes en ont émergé.</p>
       </div>
 
       <div class="mgmt-layout">
         <div class="mgmt-list reveal-stagger">
           <div class="mgmt-item">
             <span class="ic">01</span>
-            <div><h4>Multiplier l'impact</h4><p>Je veux manager parce qu'un manager peut démultiplier l'impact de chaque personne de son équipe — pas seulement le sien.</p></div>
+            <div><h4>Multiplier l'impact</h4><p>Un manager ne fait pas le travail de son équipe — il rend chaque personne capable d'un travail qu'elle n'aurait pas produit seule.</p></div>
           </div>
           <div class="mgmt-item">
             <span class="ic">02</span>
-            <div><h4>Accompagner</h4><p>Être présent dans les moments qui comptent, pas seulement dans les points d'avancement.</p></div>
+            <div><h4>Accompagner</h4><p>Une présence dans les moments qui comptent — un blocage, une erreur, un doute — pas seulement dans les points d'avancement.</p></div>
           </div>
           <div class="mgmt-item">
             <span class="ic">03</span>
-            <div><h4>Faire grandir</h4><p>Donner à chacun les moyens d'aller plus loin que ce qu'il pensait possible.</p></div>
+            <div><h4>Faire grandir</h4><p>Le passage d'un outil confidentiel à un standard d'équipe (voir Figma, section 3) ne s'est pas fait par décret : il s'est fait collaborateur par collaborateur.</p></div>
           </div>
           <div class="mgmt-item">
             <span class="ic">04</span>
-            <div><h4>Créer un espace pour les idées</h4><p>Un environnement où chacun ose proposer une idée, même imparfaite — surtout imparfaite.</p></div>
+            <div><h4>Créer un espace pour les idées</h4><p>Un environnement où une idée imparfaite peut être dite tout haut — c'est de là que sont partis 80 % des projets cités dans ce dossier.</p></div>
           </div>
           <div class="mgmt-item">
             <span class="ic">05</span>
-            <div><h4>Faire évoluer les collaborateurs</h4><p>Faire progresser chaque personne, pas seulement chaque projet.</p></div>
+            <div><h4>Faire évoluer les collaborateurs</h4><p>Une équipe se juge à ce qu'elle sait faire un an après, pas à ce qu'un projet a livré cette année.</p></div>
           </div>
         </div>
 
         <div class="mgmt-statement reveal">
           <p>Le management est une responsabilité.<br>Pas un statut.</p>
-          <p class="signature-line">— Ma conviction, pas ma théorie</p>
+          <p class="signature-line">— Testée sur un cursus Figma, avant de l'être sur une équipe</p>
         </div>
       </div>
     </div>
@@ -1951,7 +1972,7 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
       <div class="b2030-hero reveal">
         <p class="eyebrow is-green" style="justify-content:center;">07 · Ma vision de la banque</p>
         <h2 class="big">Banque 2030</h2>
-        <p class="sec-lede" style="margin:20px auto 0; text-align:center;">Voici comment j'imagine le Crédit Agricole dans les prochaines années — et le rôle que je veux y jouer.</p>
+        <p class="sec-lede" style="margin:20px auto 0; text-align:center;">Six mutations attendent les banques de réseau dans les prochaines années. Voici comment le Crédit Agricole peut les aborder en position d'avance plutôt que de rattrapage.</p>
       </div>
 
       <div class="b2030-grid reveal-stagger">
@@ -1988,7 +2009,8 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
       </div>
 
       <div class="b2030-note reveal">
-        <p class="pull-quote is-green">Je n'imagine pas une banque qui remplace l'humain par la machine. J'imagine une banque où la machine libère du temps humain pour ce que seul un humain sait vraiment faire : comprendre, conseiller, rassurer.</p>
+        <p class="pull-quote is-green">Rien ici ne remplace l'humain par la machine. La machine libère du temps humain pour ce que seul un humain sait vraiment faire : comprendre, conseiller, rassurer.</p>
+        <p class="pull-quote is-green" style="margin-top:24px;">Ma contribution à cette trajectoire ne serait pas de l'écrire sur une slide, mais de la construire projet après projet — exactement comme Impulsion Marketing, Figma et CSCA l'ont été : un irritant identifié, une solution testée avec les équipes concernées, un usage qui s'installe. C'est la méthode qui a fait ses preuves ; 2030 n'est qu'un terrain plus large pour l'appliquer.</p>
       </div>
     </div>
   </section>
@@ -2000,18 +2022,19 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
     <div class="wrap">
       <div class="section-head reveal">
         <p class="eyebrow">08 · Pourquoi moi</p>
-        <h2 class="sec-title">Sept réflexes, appliqués à chaque projet.</h2>
+        <h2 class="sec-title">Pas des promesses. Des preuves, déjà citées plus haut.</h2>
+        <p class="sec-lede">Chacune des affirmations de ce dossier renvoie à un fait précis, pas à une intention. Voici le rappel, en une ligne à chaque fois.</p>
       </div>
 
       <div class="why-grid reveal-stagger">
-        <article class="why-card"><span class="w-glyph">01</span><h3>Je prends des initiatives</h3><p>Je n'attends pas la commande. J'identifie et j'agis.</p></article>
-        <article class="why-card"><span class="w-glyph">02</span><h3>Je résous des problèmes</h3><p>Pas des symptômes — des causes.</p></article>
-        <article class="why-card"><span class="w-glyph">03</span><h3>Je fédère</h3><p>Une solution sans adhésion n'est qu'une intention.</p></article>
-        <article class="why-card"><span class="w-glyph">04</span><h3>Je construis</h3><p>Je ne recommande pas — je livre.</p></article>
-        <article class="why-card"><span class="w-glyph">05</span><h3>Je déploie</h3><p>Le prototype n'a de valeur que déployé à l'échelle.</p></article>
-        <article class="why-card"><span class="w-glyph">06</span><h3>Je mesure</h3><p>Sans donnée, il n'y a que des opinions.</p></article>
-        <article class="why-card"><span class="w-glyph">07</span><h3>Je fais évoluer les usages</h3><p>La transformation continue, bien après le lancement.</p></article>
-        <article class="why-card"><span class="w-glyph">+</span><h3>Et je recommence</h3><p>Le prochain irritant est déjà en ligne de mire.</p></article>
+        <article class="why-card"><span class="w-glyph">01</span><h3>Initiative</h3><p>Impulsion Marketing, Figma, CSCA : trois projets sur trois, jamais commandés.</p></article>
+        <article class="why-card"><span class="w-glyph">02</span><h3>Résolution de problèmes</h3><p>Le cycle Observer → Améliorer n'est pas une théorie affichée : c'est ce qui a produit chaque outil cité ici.</p></article>
+        <article class="why-card"><span class="w-glyph">03</span><h3>Capacité à fédérer</h3><p>Un outil confidentiel devenu standard d'équipe ne s'impose pas — il se fait adopter, collaborateur par collaborateur.</p></article>
+        <article class="why-card"><span class="w-glyph">04</span><h3>Exécution</h3><p>Solayia et KevinOS existent hors de tout cadre salarié : l'idée a été poussée jusqu'au produit, seule.</p></article>
+        <article class="why-card"><span class="w-glyph">05</span><h3>Passage à l'échelle</h3><p>De l'audit d'irritant CSCA à la solution déployée : le même principe appliqué à chaque chantier.</p></article>
+        <article class="why-card"><span class="w-glyph">06</span><h3>Rigueur de mesure</h3><p>KevinOS applique à une seule personne la même discipline de suivi qu'un projet d'équipe.</p></article>
+        <article class="why-card"><span class="w-glyph">07</span><h3>Vision IA appliquée</h3><p>Un agent vocal et un système d'agents autonomes : la grille Problème → Process → IA → Valeur, pas une démonstration isolée.</p></article>
+        <article class="why-card"><span class="w-glyph">08</span><h3>Sens du collectif</h3><p>Huit ans à faire progresser une équipe avant de commencer à en diriger une — la formation Figma en est la première preuve civile.</p></article>
       </div>
     </div>
   </section>
@@ -2023,8 +2046,8 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
     <div class="wrap-narrow">
       <div class="section-head reveal">
         <p class="eyebrow">09 · Trajectoire</p>
-        <h2 class="sec-title">Une trajectoire, une seule cohérence.</h2>
-        <p class="sec-lede">Dix étapes, un même fil conducteur : comprendre un terrain, puis le transformer.</p>
+        <h2 class="sec-title">Ce que chaque étape a ajouté à la suivante.</h2>
+        <p class="sec-lede">Pas une chronologie de postes : une accumulation. Chaque étape a rendu la suivante possible.</p>
       </div>
 
       <div class="timeline reveal-stagger">
@@ -2034,61 +2057,61 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
           <span class="tl-dot" aria-hidden="true"></span>
           <p class="tl-tag">Point de départ · 8 ans</p>
           <h3>Armée</h3>
-          <p>Encadrement, discipline, décision sous pression. Le socle de tout ce qui suit.</p>
+          <p>A donné le socle : discipline, décision sous pression, sens du collectif — repris tel quel dans tout ce qui suit.</p>
         </div>
         <div class="tl-item">
           <span class="tl-dot" aria-hidden="true"></span>
           <p class="tl-tag">La bascule</p>
           <h3>Reconversion</h3>
-          <p>Choisir le numérique comme nouveau terrain d'application de la même exigence.</p>
+          <p>A transposé ce socle au numérique — sans le diluer, seulement en changeant de terrain d'application.</p>
         </div>
         <div class="tl-item">
           <span class="tl-dot" aria-hidden="true"></span>
           <p class="tl-tag">Nouveau terrain</p>
           <h3>Crédit Agricole</h3>
-          <p>Une organisation à la mesure de l'ambition : transformer à grande échelle, avec les équipes.</p>
+          <p>A offert l'échelle qui manquait : une organisation où une méthode individuelle peut devenir un usage collectif.</p>
         </div>
         <div class="tl-item">
           <span class="tl-dot" aria-hidden="true"></span>
           <p class="tl-tag">Posture</p>
-          <h3>Innovation</h3>
-          <p>Identifier les irritants avant qu'on me les signale, et proposer plutôt qu'attendre.</p>
+          <h3>Initiative</h3>
+          <p>A fixé le réflexe qui suit depuis : repérer l'irritant avant qu'il ne remonte, proposer avant qu'on ne demande.</p>
         </div>
         <div class="tl-item">
           <span class="tl-dot" aria-hidden="true"></span>
           <p class="tl-tag">Premier projet</p>
           <h3>Impulsion Marketing</h3>
-          <p>Concevoir un outil de pilotage à partir d'un constat de terrain, jusqu'à son adoption.</p>
+          <p>A validé ce réflexe une première fois : un constat de terrain devenu outil, puis usage adopté.</p>
         </div>
         <div class="tl-item">
           <span class="tl-dot" aria-hidden="true"></span>
           <p class="tl-tag">Montée en compétence collective</p>
           <h3>Figma</h3>
-          <p>Former, accompagner, ancrer un nouvel usage dans les pratiques quotidiennes des équipes.</p>
+          <p>A été le premier test de management : former, accompagner, ancrer un usage à l'échelle d'une équipe entière.</p>
         </div>
         <div class="tl-item">
           <span class="tl-dot" aria-hidden="true"></span>
           <p class="tl-tag">Transformation transverse</p>
           <h3>CSCA</h3>
-          <p>Porter plusieurs chantiers de modernisation des outils et des process.</p>
+          <p>A élargi la méthode à plusieurs chantiers simultanés — de l'audit à la mise en œuvre.</p>
         </div>
         <div class="tl-item">
           <span class="tl-dot" aria-hidden="true"></span>
           <p class="tl-tag">Entrepreneuriat</p>
           <h3>Solayia</h3>
-          <p>Prouver, en dehors du cadre salarié, qu'une vision peut devenir une entreprise.</p>
+          <p>A testé la méthode sans le filet d'un employeur : jusqu'au premier client, ou nulle part.</p>
         </div>
         <div class="tl-item">
           <span class="tl-dot" aria-hidden="true"></span>
           <p class="tl-tag">Discipline personnelle</p>
           <h3>KevinOS</h3>
-          <p>Appliquer à soi-même la rigueur qu'on attend d'un manager.</p>
+          <p>A retourné la méthode sur soi-même — la même rigueur, appliquée sans personne pour l'exiger.</p>
         </div>
         <div class="tl-item is-future">
           <span class="tl-dot" aria-hidden="true"></span>
           <p class="tl-tag">Prochaine étape</p>
           <h3>Management</h3>
-          <p>Mettre cette trajectoire au service d'une équipe — pour en multiplier l'impact, pas seulement le mien.</p>
+          <p>Reste la seule chose que cette trajectoire n'a pas encore testée à pleine échelle : une équipe, confiée dans la durée.</p>
         </div>
       </div>
     </div>
@@ -2101,18 +2124,18 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
     <div class="wrap">
       <div class="section-head reveal">
         <p class="eyebrow">10 · Mes valeurs</p>
-        <h2 class="sec-title">Ce qui ne change jamais, quel que soit le projet.</h2>
+        <h2 class="sec-title">Huit mots, huit preuves déjà données plus haut.</h2>
       </div>
 
       <div class="values-grid reveal-stagger">
-        <div class="value-cell"><h3>Engagement</h3><p>S'investir pleinement, sans calcul.</p></div>
-        <div class="value-cell"><h3>Responsabilité</h3><p>Assumer, y compris quand ça ne marche pas.</p></div>
-        <div class="value-cell"><h3>Initiative</h3><p>Agir avant qu'on ne le demande.</p></div>
-        <div class="value-cell"><h3>Innovation</h3><p>Remettre en question ce qui semble acquis.</p></div>
-        <div class="value-cell"><h3>Exigence</h3><p>Ne jamais se contenter du « suffisant ».</p></div>
-        <div class="value-cell"><h3>Esprit d'équipe</h3><p>La réussite collective avant la réussite individuelle.</p></div>
-        <div class="value-cell"><h3>Leadership</h3><p>Donner du sens, être le premier à s'exposer.</p></div>
-        <div class="value-cell"><h3>Transmission</h3><p>Faire grandir les autres, pas seulement soi-même.</p></div>
+        <div class="value-cell"><h3>Engagement</h3><p>Solayia construit sur le temps personnel, sans commande ni filet.</p></div>
+        <div class="value-cell"><h3>Responsabilité</h3><p>Porter un chantier CSCA de l'audit jusqu'à la mise en œuvre, pas jusqu'à la recommandation.</p></div>
+        <div class="value-cell"><h3>Initiative</h3><p>Impulsion Marketing : jamais demandé, devenu indispensable.</p></div>
+        <div class="value-cell"><h3>Innovation</h3><p>Choisir l'IA agentique avant qu'elle ne devienne un standard de poste.</p></div>
+        <div class="value-cell"><h3>Exigence</h3><p>Refuser qu'un outil Figma reste confidentiel : le rendre standard, ou recommencer.</p></div>
+        <div class="value-cell"><h3>Esprit d'équipe</h3><p>Huit ans où la performance individuelle n'a jamais compté sans la collective.</p></div>
+        <div class="value-cell"><h3>Leadership</h3><p>Être le premier exposé quand une mission se complique — appris sur le terrain, pas en formation.</p></div>
+        <div class="value-cell"><h3>Transmission</h3><p>Former une équipe entière à un nouvel outil, puis s'effacer pour qu'elle en soit autonome.</p></div>
       </div>
     </div>
   </section>
@@ -2130,8 +2153,8 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
       <div class="quotes-grid reveal-stagger">
         <article class="quote-card">
           <span class="qmark">“</span>
-          <p>Je ne suis pas passionné par la technologie. Je suis passionné par les problèmes à résoudre.</p>
-          <p class="qmeta">Sur la technologie</p>
+          <p>Une habitude n'est qu'un problème auquel plus personne ne prête attention.</p>
+          <p class="qmeta">Sur les habitudes</p>
         </article>
         <article class="quote-card">
           <span class="qmark">“</span>
@@ -2150,8 +2173,8 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
         </article>
         <article class="quote-card">
           <span class="qmark">“</span>
-          <p>80 % des projets que j'ai développés sont partis de mes propres constats.</p>
-          <p class="qmeta">Sur l'initiative</p>
+          <p>Un outil adopté par une seule personne n'a rien changé. Il ne change quelque chose que le jour où l'équipe entière s'en empare.</p>
+          <p class="qmeta">Sur le collectif</p>
         </article>
         <article class="quote-card">
           <span class="qmark">“</span>
@@ -2168,15 +2191,13 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
   <section class="section conclusion-section" id="conclusion">
     <div class="conclusion-inner">
       <p class="conclusion-eyebrow reveal">Pour conclure</p>
-      <h2 class="reveal">Ce que je souhaite que vous reteniez de moi</h2>
-      <p class="lead-text reveal">Je souhaite être la personne à qui l'on confie les sujets complexes.</p>
+      <h2 class="reveal">Ce dossier n'avait qu'un objectif : être digne des sujets complexes qu'on pourrait me confier.</h2>
       <p class="lead-text reveal">
-        Parce que je sais <strong>comprendre un problème</strong>.
-        <strong>Fédérer les personnes</strong> autour d'une solution.
-        <strong>Construire</strong> cette solution.
-        <strong>L'accompagner</strong> jusqu'à son adoption.
-        Et créer une <strong>valeur qui dure</strong>, bien après le projet.
+        Comprendre un problème avant qu'il ne soit formulé. Fédérer une équipe autour d'une solution.
+        La construire, l'accompagner jusqu'à l'adoption, et créer une <strong>valeur qui dure</strong> bien après le lancement.
+        C'est ce que ce dossier a tenté de démontrer, pas seulement d'affirmer.
       </p>
+      <p class="lead-text reveal">Le Crédit Agricole Toulouse 31 a l'échelle et le terrain pour aller plus loin dans cette direction. La suite se discute volontiers en entretien.</p>
 
       <div class="signature-block reveal">
         <span class="sig">Kevin Dolié</span>
