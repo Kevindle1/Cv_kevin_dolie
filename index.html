@@ -23,31 +23,10 @@
   KEVIN DOLIÉ — DOSSIER DE TRANSFORMATION
   ==========================================================================
   Fichier unique (HTML + CSS + JS), sans dépendance externe, sans bibliothèque,
-  sans framework. Conçu pour deux usages :
-    1. Lecture à l'écran (desktop / mobile) avec animations discrètes au scroll
-    2. Impression / export PDF avec une mise en page dédiée et soignée
-
-  Sommaire du document
-  ---------------------
-  00. Reset & variables (design tokens)
-  01. Typographie & utilitaires
-  02. Barre de progression + navigation
-  03. Hero
-  04. Qui suis-je ?
-  05. Mon ADN
-  06. Crédit Agricole
-  07. Intelligence Artificielle
-  08. Mes projets
-  09. Pourquoi le management
-  10. Ma vision de la banque — Banque 2030
-  11. Pourquoi moi
-  12. Timeline
-  13. Mes valeurs
-  14. Ma philosophie
-  15. Conclusion
-  16. Footer
-  17. Media print
-  18. JavaScript (scroll reveal, scrollspy, compteurs, impression)
+  sans framework. Structuré en 3 axes pour rester condensé :
+    01. Moi           — le socle (armée, raisonnement, valeurs)
+    02. Le service    — les preuves et la vision pour l'unité visée
+    03. La conclusion — la trajectoire condensée et le mot de la fin
   ==========================================================================
 -->
 
@@ -109,7 +88,7 @@
 
   /* Rythme */
   --gutter: clamp(24px, 5vw, 64px);
-  --section-pad: clamp(72px, 11vw, 156px);
+  --section-pad: clamp(64px, 10vw, 128px);
   --ease-out: cubic-bezier(.16,.84,.44,1);
   --ease-in-out: cubic-bezier(.65,0,.35,1);
 
@@ -251,17 +230,22 @@ h1, h2, h3, h4{
 }
 
 .section-head{
-  margin-bottom:clamp(48px, 7vw, 84px);
+  margin-bottom:clamp(40px, 6vw, 64px);
 }
+
+.sub-head{
+  margin:48px 0 24px;
+}
+.sub-head:first-of-type{ margin-top:0; }
 
 .pull-quote{
   font-family:var(--f-display);
   font-weight:700;
-  font-size:clamp(21px, 2.4vw, 28px);
+  font-size:clamp(20px, 2.2vw, 26px);
   line-height:1.35;
   color:var(--ink);
   max-width:760px;
-  margin:36px 0;
+  margin:28px 0;
   padding-left:26px;
   border-left:3px solid var(--blue);
 }
@@ -285,15 +269,10 @@ h1, h2, h3, h4{
 }
 .reveal-stagger.in-view > *{ opacity:1; transform:translateY(0); }
 .reveal-stagger.in-view > *:nth-child(1){ transition-delay:.02s; }
-.reveal-stagger.in-view > *:nth-child(2){ transition-delay:.09s; }
-.reveal-stagger.in-view > *:nth-child(3){ transition-delay:.16s; }
-.reveal-stagger.in-view > *:nth-child(4){ transition-delay:.23s; }
-.reveal-stagger.in-view > *:nth-child(5){ transition-delay:.30s; }
-.reveal-stagger.in-view > *:nth-child(6){ transition-delay:.37s; }
-.reveal-stagger.in-view > *:nth-child(7){ transition-delay:.44s; }
-.reveal-stagger.in-view > *:nth-child(8){ transition-delay:.51s; }
-.reveal-stagger.in-view > *:nth-child(9){ transition-delay:.58s; }
-.reveal-stagger.in-view > *:nth-child(10){ transition-delay:.65s; }
+.reveal-stagger.in-view > *:nth-child(2){ transition-delay:.08s; }
+.reveal-stagger.in-view > *:nth-child(3){ transition-delay:.14s; }
+.reveal-stagger.in-view > *:nth-child(4){ transition-delay:.20s; }
+.reveal-stagger.in-view > *:nth-child(5){ transition-delay:.26s; }
 
 .btn{
   display:inline-flex;
@@ -320,16 +299,42 @@ h1, h2, h3, h4{
   transform:translateY(-2px);
   box-shadow:var(--shadow-blue);
 }
-.btn-ghost{
-  border:1.5px solid var(--grey-300);
-  color:var(--ink);
-  background:var(--white);
+
+/* Rangée de tags compacte — remplace les grandes grilles de cartes
+   pour : les 8 réflexes, le cycle ADN, les valeurs, Banque 2030, la trajectoire */
+.tag-row{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:10px;
+  margin:24px 0;
 }
-.btn-ghost:hover{
-  border-color:var(--blue);
-  color:var(--blue);
-  transform:translateY(-2px);
+.tag-row span{
+  font-family:var(--f-mono);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.2px;
+  padding:9px 16px;
+  border-radius:100px;
+  background:var(--grey-100);
+  color:var(--ink-soft);
+  border:1px solid var(--grey-200);
+  white-space:nowrap;
 }
+.tag-row span.arrow{
+  background:none;
+  border:none;
+  padding:9px 0;
+  color:var(--grey-400);
+  font-weight:400;
+}
+.tag-row.is-green span{ background:var(--green-soft); border-color:var(--green-line); color:var(--green-deep); }
+.conclusion-section .tag-row span{
+  background:rgba(255,255,255,.07);
+  border-color:rgba(255,255,255,.16);
+  color:rgba(255,255,255,.85);
+}
+.conclusion-section .tag-row span.arrow{ color:rgba(255,255,255,.35); }
 
 
 /* ==========================================================================
@@ -399,8 +404,8 @@ nav.main-nav a{
   display:inline-flex;
   align-items:center;
   min-height:44px;
-  padding:10px 14px;
-  font-size:13.5px;
+  padding:10px 16px;
+  font-size:14px;
   font-weight:600;
   color:var(--grey-600);
   text-decoration:none;
@@ -444,7 +449,7 @@ nav.main-nav a.is-active{ color:var(--blue); background:var(--blue-soft); }
 .nav-toggle[aria-expanded="true"] span::before{ top:0; transform:rotate(45deg); }
 .nav-toggle[aria-expanded="true"] span::after{ top:0; transform:rotate(-45deg); }
 
-@media (max-width:980px){
+@media (max-width:760px){
   nav.main-nav{
     position:fixed;
     inset:72px 0 0 0;
@@ -542,7 +547,6 @@ nav.main-nav a.is-active{ color:var(--blue); background:var(--blue-soft); }
   75%, 95%  { transform:translateY(-4.5em); }
   100%      { transform:translateY(-6em); }
 }
-.hero-roles li:last-child{ /* clone du premier pour boucler sans saut */ }
 
 .hero-quote{
   margin-top:44px;
@@ -601,45 +605,8 @@ nav.main-nav a.is-active{ color:var(--blue); background:var(--blue-soft); }
 
 
 /* ==========================================================================
-   04. QUI SUIS-JE ?
+   04. AXE 1 · MOI — narration, cycle, stat, valeurs
    ========================================================================== */
-
-.lessons-grid{
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:1px;
-  background:var(--grey-200);
-  border:1px solid var(--grey-200);
-  border-radius:var(--r-lg);
-  overflow:hidden;
-  margin:44px 0 56px;
-}
-@media (max-width:980px){ .lessons-grid{ grid-template-columns:repeat(2, 1fr); } }
-@media (max-width:520px){ .lessons-grid{ grid-template-columns:1fr; } }
-
-.lesson-card{
-  background:var(--white);
-  padding:32px 26px;
-  transition:background .3s var(--ease-out), transform .3s var(--ease-out);
-}
-.lesson-card:hover{ background:var(--blue-soft); }
-.lesson-card .num{
-  font-family:var(--f-mono);
-  font-size:12px;
-  color:var(--blue);
-  font-weight:700;
-  margin-bottom:14px;
-  display:block;
-}
-.lesson-card h3{
-  font-size:18px;
-  margin-bottom:10px;
-}
-.lesson-card p{
-  color:var(--ink-soft);
-  font-size:14.5px;
-  line-height:1.6;
-}
 
 .narrative-block{
   max-width:720px;
@@ -653,59 +620,15 @@ nav.main-nav a.is-active{ color:var(--blue); background:var(--blue-soft); }
 }
 .narrative-block p strong{ color:var(--ink); font-weight:700; }
 
-.story-columns{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:56px;
-  margin-top:64px;
-}
-@media (max-width:860px){ .story-columns{ grid-template-columns:1fr; gap:36px; } }
-
-.story-col .tag{
-  display:inline-block;
-  font-family:var(--f-mono);
-  font-size:11.5px;
-  font-weight:700;
-  letter-spacing:1.6px;
-  text-transform:uppercase;
-  color:var(--green-deep);
-  background:var(--green-soft);
-  padding:6px 12px;
-  border-radius:100px;
-  margin-bottom:16px;
-}
-.story-col.is-blue .tag{ color:var(--blue); background:var(--blue-soft); }
-.story-col h3{ font-size:22px; margin-bottom:14px; }
-.story-col p{ color:var(--ink-soft); font-size:15.5px; line-height:1.75; }
-
-
-/* ==========================================================================
-   05. MON ADN — schéma de raisonnement
-   ========================================================================== */
-
-.adn-layout{
-  display:grid;
-  grid-template-columns:1.05fr .95fr;
-  gap:72px;
-  align-items:start;
-}
-@media (max-width:980px){ .adn-layout{ grid-template-columns:1fr; gap:56px; } }
-
-.adn-text .narrative-block{ margin-bottom:40px; }
-
-.adn-side{
-  position:sticky;
-  top:96px;
-}
-@media (max-width:980px){ .adn-side{ position:static; } }
-
 .stat-card{
   background:var(--ink);
   color:var(--white);
   border-radius:var(--r-lg);
-  padding:40px 36px;
+  padding:36px 34px;
   position:relative;
   overflow:hidden;
+  max-width:620px;
+  margin:32px 0;
 }
 .stat-card::after{
   content:"";
@@ -718,121 +641,38 @@ nav.main-nav a.is-active{ color:var(--blue); background:var(--blue-soft); }
 .stat-card .stat-number{
   font-family:var(--f-display);
   font-weight:800;
-  font-size:clamp(56px, 6vw, 76px);
+  font-size:clamp(48px, 5.5vw, 64px);
   line-height:1;
   background:linear-gradient(100deg, #fff 40%, var(--green-bright) 110%);
   -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
 }
 .stat-card .stat-label{
-  margin-top:14px;
-  font-size:16px;
+  margin-top:12px;
+  font-size:15.5px;
   color:rgba(255,255,255,.78);
-  max-width:420px;
+  max-width:460px;
   position:relative;
   line-height:1.6;
 }
-.stat-card p.stat-follow{
-  margin-top:22px;
-  font-size:14.5px;
-  color:rgba(255,255,255,.6);
-  border-top:1px solid rgba(255,255,255,.14);
-  padding-top:20px;
-  position:relative;
-}
-
-/* Diagramme du raisonnement — flux vertical connecté */
-.flow-diagram{
-  position:relative;
-  padding-left:8px;
-}
-.flow-step{
-  position:relative;
-  padding:0 0 34px 52px;
-}
-.flow-step::before{
-  /* ligne verticale de connexion */
-  content:"";
-  position:absolute;
-  left:17px; top:36px; bottom:-2px;
-  width:2px;
-  background:linear-gradient(var(--blue-line), var(--green-line));
-}
-.flow-step:last-child::before{ display:none; }
-.flow-step .node{
-  position:absolute;
-  left:0; top:0;
-  width:36px; height:36px;
-  border-radius:50%;
-  background:var(--white);
-  border:2px solid var(--blue);
-  color:var(--blue);
-  font-family:var(--f-mono);
-  font-weight:700;
-  font-size:13px;
-  display:flex; align-items:center; justify-content:center;
-  transition:background .3s var(--ease-out), color .3s var(--ease-out), transform .3s var(--ease-out);
-}
-.flow-step:nth-child(8) .node,
-.flow-step:nth-child(9) .node,
-.flow-step:nth-child(10) .node{
-  border-color:var(--green);
-  color:var(--green-deep);
-}
-.flow-step:hover .node{
-  background:var(--blue);
-  color:var(--white);
-  transform:scale(1.1);
-}
-.flow-step:nth-child(8):hover .node,
-.flow-step:nth-child(9):hover .node,
-.flow-step:nth-child(10):hover .node{
-  background:var(--green);
-  color:var(--white);
-}
-.flow-step h4{
-  font-size:17px;
-  font-weight:700;
-  margin-bottom:4px;
-}
-.flow-step p{
-  font-size:14px;
-  color:var(--ink-soft);
-  max-width:380px;
-}
-.flow-loop{
-  margin-left:52px;
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  font-family:var(--f-mono);
-  font-size:12.5px;
-  font-weight:700;
-  letter-spacing:.5px;
-  color:var(--green-deep);
-  background:var(--green-soft);
-  padding:10px 18px;
-  border-radius:100px;
-}
-.flow-loop .arrow{ font-size:15px; }
 
 
 /* ==========================================================================
-   06. CRÉDIT AGRICOLE — cartes projets
+   05. AXE 2 · LE SERVICE — preuves, projets, vision, management
    ========================================================================== */
 
 .ca-cards{
   display:grid;
-  grid-template-columns:repeat(2, 1fr);
-  gap:28px;
+  grid-template-columns:repeat(3, 1fr);
+  gap:24px;
   margin-bottom:28px;
 }
-@media (max-width:860px){ .ca-cards{ grid-template-columns:1fr; } }
+@media (max-width:900px){ .ca-cards{ grid-template-columns:1fr; } }
 
 .ca-card{
   background:var(--white);
   border:1px solid var(--grey-200);
   border-radius:var(--r-lg);
-  padding:36px;
+  padding:28px 26px;
   transition:transform .4s var(--ease-out), box-shadow .4s var(--ease-out), border-color .4s var(--ease-out);
 }
 .ca-card:hover{
@@ -840,56 +680,61 @@ nav.main-nav a.is-active{ color:var(--blue); background:var(--blue-soft); }
   box-shadow:var(--shadow-lg);
   border-color:var(--blue-line);
 }
-.ca-card .ca-head{
-  display:flex; align-items:center; justify-content:space-between;
-  margin-bottom:22px;
-}
-.ca-card .ca-head h3{ font-size:22px; }
-.ca-card .ca-index{
-  font-family:var(--f-mono);
-  font-size:12px;
-  color:var(--grey-400);
-}
-.ca-block{ margin-bottom:18px; }
+.ca-card h3{ font-size:19px; margin-bottom:16px; }
+.ca-block{ margin-bottom:14px; }
 .ca-block:last-child{ margin-bottom:0; }
 .ca-block .lbl{
   display:block;
   font-family:var(--f-mono);
-  font-size:11px;
+  font-size:10.5px;
   font-weight:700;
   letter-spacing:1.4px;
   text-transform:uppercase;
   color:var(--blue);
   margin-bottom:6px;
 }
-.ca-block p{ font-size:14.8px; color:var(--ink-soft); line-height:1.65; }
+.ca-block p{ font-size:14.3px; color:var(--ink-soft); line-height:1.6; }
 
-.ca-card.is-wide{ grid-column:1 / -1; }
-
-
-/* ==========================================================================
-   07. INTELLIGENCE ARTIFICIELLE — schéma horizontal
-   ========================================================================== */
-
-.ia-value-list{
+/* Grille compacte — projets personnels, en une ligne chacun */
+.compact-grid{
   display:grid;
-  grid-template-columns:repeat(5, 1fr);
-  gap:14px;
-  margin:36px 0 56px;
+  grid-template-columns:1fr 1fr;
+  gap:22px 32px;
+  margin:28px 0;
 }
-@media (max-width:860px){ .ia-value-list{ grid-template-columns:repeat(2,1fr); } }
-@media (max-width:520px){ .ia-value-list{ grid-template-columns:1fr; } }
-.ia-value-list li{
-  background:var(--white);
-  border:1px solid var(--grey-200);
-  border-radius:var(--r-md);
-  padding:20px 18px;
-  font-size:14px;
-  font-weight:600;
-  color:var(--ink-soft);
-  text-align:center;
+@media (max-width:760px){ .compact-grid{ grid-template-columns:1fr; } }
+.compact-grid .item strong{
+  display:block;
+  color:var(--ink);
+  font-size:15.5px;
+  margin-bottom:5px;
 }
-.ia-value-list li strong{ display:block; color:var(--ink); font-size:15.5px; margin-bottom:4px; }
+.compact-grid .item p{ color:var(--ink-soft); font-size:14.3px; line-height:1.6; }
+
+.story-columns{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  margin:28px 0;
+}
+@media (max-width:860px){ .story-columns{ grid-template-columns:1fr; gap:28px; } }
+
+.story-col .tag{
+  display:inline-block;
+  font-family:var(--f-mono);
+  font-size:11.5px;
+  font-weight:700;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+  color:var(--green-deep);
+  background:var(--green-soft);
+  padding:6px 12px;
+  border-radius:100px;
+  margin-bottom:14px;
+}
+.story-col.is-blue .tag{ color:var(--blue); background:var(--blue-soft); }
+.story-col h3{ font-size:19px; margin-bottom:10px; }
+.story-col p{ color:var(--ink-soft); font-size:14.8px; line-height:1.7; }
 
 .pipeline{
   display:flex;
@@ -897,7 +742,7 @@ nav.main-nav a.is-active{ color:var(--blue); background:var(--blue-soft); }
   gap:0;
   overflow-x:auto;
   padding-bottom:8px;
-  margin:44px 0;
+  margin:28px 0;
 }
 .pipeline-step{
   flex:1 1 0;
@@ -905,7 +750,7 @@ nav.main-nav a.is-active{ color:var(--blue); background:var(--blue-soft); }
   background:var(--white);
   border:2px solid var(--grey-200);
   border-radius:var(--r-md);
-  padding:26px 20px;
+  padding:24px 20px;
   text-align:center;
   position:relative;
   transition:border-color .3s var(--ease-out), transform .3s var(--ease-out);
@@ -917,13 +762,13 @@ nav.main-nav a.is-active{ color:var(--blue); background:var(--blue-soft); }
 }
 .pipeline-step h4{ font-size:16px; margin-bottom:6px; }
 .pipeline-step p{ font-size:12.5px; color:var(--grey-500); }
-.pipeline-step + .pipeline-step{ margin-left:34px; }
+.pipeline-step + .pipeline-step{ margin-left:28px; }
 .pipeline-step + .pipeline-step::before{
   content:"→";
   position:absolute;
-  left:-30px; top:50%;
+  left:-26px; top:50%;
   transform:translateY(-50%);
-  font-size:22px;
+  font-size:20px;
   color:var(--grey-400);
   font-weight:700;
 }
@@ -937,116 +782,29 @@ nav.main-nav a.is-active{ color:var(--blue); background:var(--blue-soft); }
 
 @media (max-width:760px){
   .pipeline{ flex-direction:column; }
-  .pipeline-step + .pipeline-step{ margin-left:0; margin-top:34px; }
+  .pipeline-step + .pipeline-step{ margin-left:0; margin-top:28px; }
   .pipeline-step + .pipeline-step::before{
     content:"↓";
-    left:50%; top:-30px; transform:translateX(-50%);
+    left:50%; top:-26px; transform:translateX(-50%);
   }
 }
-
-.ia-close{
-  margin-top:12px;
-}
-
-
-/* ==========================================================================
-   08. MES PROJETS
-   ========================================================================== */
-
-.projects-grid{
-  display:grid;
-  grid-template-columns:repeat(2, 1fr);
-  gap:28px;
-}
-@media (max-width:900px){ .projects-grid{ grid-template-columns:1fr; } }
-
-.project-card{
-  background:var(--white);
-  border:1px solid var(--grey-200);
-  border-radius:var(--r-lg);
-  padding:0;
-  overflow:hidden;
-  transition:transform .4s var(--ease-out), box-shadow .4s var(--ease-out);
-}
-.project-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow-lg); }
-.project-card .p-head{
-  padding:30px 32px 24px;
-  background:linear-gradient(135deg, var(--blue-soft), var(--white) 70%);
-  border-bottom:1px solid var(--grey-150);
-}
-.project-card.is-ia .p-head{
-  background:linear-gradient(135deg, var(--green-soft), var(--white) 70%);
-}
-.project-card .p-head .p-kicker{
-  font-family:var(--f-mono);
-  font-size:11px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase;
-  color:var(--blue); margin-bottom:8px;
-}
-.project-card.is-ia .p-head .p-kicker{ color:var(--green-deep); }
-.project-card .p-head h3{ font-size:26px; }
-.project-card .p-body{ padding:28px 32px 32px; }
-.p-row{ margin-bottom:16px; }
-.p-row:last-child{ margin-bottom:0; }
-.p-row .lbl{
-  display:block;
-  font-family:var(--f-mono);
-  font-size:10.5px; font-weight:700; letter-spacing:1.3px; text-transform:uppercase;
-  color:var(--grey-500); margin-bottom:5px;
-}
-.p-row p{ font-size:14.3px; color:var(--ink-soft); line-height:1.6; }
-
-.project-card.full-width{ grid-column:1 / -1; }
-
-
-/* ==========================================================================
-   09. POURQUOI LE MANAGEMENT
-   ========================================================================== */
-
-.mgmt-layout{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:64px;
-  align-items:center;
-}
-@media (max-width:900px){ .mgmt-layout{ grid-template-columns:1fr; gap:40px; } }
-
-.mgmt-list{
-  display:flex;
-  flex-direction:column;
-  gap:22px;
-}
-.mgmt-item{
-  display:flex;
-  gap:18px;
-  align-items:flex-start;
-}
-.mgmt-item .ic{
-  flex:0 0 auto;
-  width:44px; height:44px;
-  border-radius:12px;
-  background:var(--blue-soft);
-  color:var(--blue);
-  display:flex; align-items:center; justify-content:center;
-  font-weight:800;
-  font-family:var(--f-mono);
-}
-.mgmt-item h4{ font-size:17px; margin-bottom:4px; }
-.mgmt-item p{ font-size:14.5px; color:var(--ink-soft); }
 
 .mgmt-statement{
   background:var(--ink);
   border-radius:var(--r-lg);
-  padding:48px 40px;
+  padding:40px 36px;
   color:var(--white);
   position:relative;
   overflow:hidden;
+  max-width:620px;
+  margin:28px 0;
 }
 .mgmt-statement::before{
   content:"“";
   position:absolute;
   top:-10px; left:24px;
   font-family:Georgia, serif;
-  font-size:140px;
+  font-size:120px;
   color:rgba(255,255,255,.06);
   line-height:1;
 }
@@ -1054,11 +812,11 @@ nav.main-nav a.is-active{ color:var(--blue); background:var(--blue-soft); }
   position:relative;
   font-family:var(--f-display);
   font-weight:700;
-  font-size:clamp(22px, 2.6vw, 30px);
+  font-size:clamp(20px, 2.4vw, 26px);
   line-height:1.4;
 }
 .mgmt-statement .signature-line{
-  margin-top:28px;
+  margin-top:22px;
   font-family:var(--f-mono);
   font-size:13px;
   color:var(--green-bright);
@@ -1067,230 +825,7 @@ nav.main-nav a.is-active{ color:var(--blue); background:var(--blue-soft); }
 
 
 /* ==========================================================================
-   10. MA VISION DE LA BANQUE — BANQUE 2030
-   ========================================================================== */
-
-.b2030-hero{
-  text-align:center;
-  margin-bottom:64px;
-}
-.b2030-hero .big{
-  font-size:clamp(44px, 8vw, 96px);
-  line-height:1;
-  background:linear-gradient(100deg, var(--blue-deep), var(--blue) 45%, var(--green) 100%);
-  -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
-}
-
-.b2030-grid{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:24px;
-}
-@media (max-width:900px){ .b2030-grid{ grid-template-columns:repeat(2, 1fr); } }
-@media (max-width:600px){ .b2030-grid{ grid-template-columns:1fr; } }
-
-.b2030-card{
-  background:var(--white);
-  border:1px solid var(--grey-200);
-  border-radius:var(--r-lg);
-  padding:32px 28px;
-  transition:transform .4s var(--ease-out), box-shadow .4s var(--ease-out), border-color .4s var(--ease-out);
-}
-.b2030-card:hover{
-  transform:translateY(-6px);
-  box-shadow:var(--shadow-lg);
-  border-color:var(--green-line);
-}
-.b2030-card .b-num{
-  display:inline-flex; align-items:center; justify-content:center;
-  width:40px; height:40px;
-  border-radius:10px;
-  background:var(--green-soft);
-  color:var(--green-deep);
-  font-family:var(--f-mono);
-  font-weight:800;
-  margin-bottom:18px;
-}
-.b2030-card h3{ font-size:19px; margin-bottom:10px; }
-.b2030-card p{ font-size:14.5px; color:var(--ink-soft); line-height:1.65; }
-
-.b2030-note{
-  margin-top:56px;
-  max-width:760px;
-}
-
-
-/* ==========================================================================
-   11. POURQUOI MOI
-   ========================================================================== */
-
-.why-grid{
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:20px;
-}
-@media (max-width:980px){ .why-grid{ grid-template-columns:repeat(2, 1fr); } }
-@media (max-width:560px){ .why-grid{ grid-template-columns:1fr; } }
-
-.why-card{
-  background:var(--white);
-  border:1px solid var(--grey-200);
-  border-radius:var(--r-lg);
-  padding:30px 26px;
-  transition:transform .35s var(--ease-out), box-shadow .35s var(--ease-out), background .35s var(--ease-out);
-}
-.why-card:hover{
-  transform:translateY(-5px);
-  box-shadow:var(--shadow-md);
-  background:linear-gradient(160deg, var(--white), var(--blue-soft));
-}
-.why-card .w-glyph{
-  font-family:var(--f-mono);
-  font-size:26px;
-  font-weight:800;
-  color:var(--blue);
-  margin-bottom:16px;
-}
-.why-card:nth-child(even) .w-glyph{ color:var(--green-deep); }
-.why-card h3{ font-size:17px; margin-bottom:8px; }
-.why-card p{ font-size:13.8px; color:var(--ink-soft); line-height:1.6; }
-
-
-/* ==========================================================================
-   12. TIMELINE
-   ========================================================================== */
-
-.timeline{
-  position:relative;
-  padding-left:2px;
-}
-.tl-line{
-  position:absolute;
-  left:23px; top:8px; bottom:8px;
-  width:2px;
-  background:linear-gradient(var(--blue), var(--green));
-  border-radius:2px;
-}
-.tl-item{
-  position:relative;
-  padding:0 0 46px 64px;
-}
-.tl-item:last-child{ padding-bottom:0; }
-.tl-item .tl-dot{
-  position:absolute;
-  left:12px; top:2px;
-  width:26px; height:26px;
-  border-radius:50%;
-  background:var(--white);
-  border:3px solid var(--blue);
-  transition:transform .35s var(--ease-out), background .35s var(--ease-out);
-}
-.tl-item:nth-child(n+6) .tl-dot{ border-color:var(--green); }
-.tl-item:hover .tl-dot{ transform:scale(1.25); background:var(--blue); }
-.tl-item:nth-child(n+6):hover .tl-dot{ background:var(--green); }
-.tl-item .tl-tag{
-  font-family:var(--f-mono);
-  font-size:11px; font-weight:700; letter-spacing:1.4px; text-transform:uppercase;
-  color:var(--grey-500);
-  margin-bottom:6px;
-}
-.tl-item h3{ font-size:20px; margin-bottom:8px; }
-.tl-item p{ font-size:14.5px; color:var(--ink-soft); max-width:600px; }
-.tl-item.is-future{
-  border:1.5px dashed var(--grey-300);
-  border-radius:var(--r-md);
-  padding-top:20px; padding-bottom:20px; padding-right:20px;
-  margin-left:-1px;
-}
-.tl-item.is-future .tl-dot{ border-style:dashed; }
-
-
-/* ==========================================================================
-   13. MES VALEURS
-   ========================================================================== */
-
-.values-grid{
-  display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:1px;
-  background:var(--grey-200);
-  border:1px solid var(--grey-200);
-  border-radius:var(--r-lg);
-  overflow:hidden;
-}
-@media (max-width:900px){ .values-grid{ grid-template-columns:repeat(2, 1fr); } }
-@media (max-width:520px){ .values-grid{ grid-template-columns:1fr; } }
-
-.value-cell{
-  background:var(--white);
-  padding:38px 26px;
-  text-align:center;
-  transition:background .3s var(--ease-out);
-}
-.value-cell:hover{ background:var(--blue-soft); }
-.value-cell h3{
-  font-size:18px;
-  margin-bottom:10px;
-}
-.value-cell p{
-  font-size:13.3px;
-  color:var(--ink-soft);
-  line-height:1.55;
-}
-
-
-/* ==========================================================================
-   14. MA PHILOSOPHIE — citations
-   ========================================================================== */
-
-.quotes-grid{
-  display:grid;
-  grid-template-columns:repeat(3, 1fr);
-  gap:24px;
-}
-@media (max-width:980px){ .quotes-grid{ grid-template-columns:repeat(2, 1fr); } }
-@media (max-width:640px){ .quotes-grid{ grid-template-columns:1fr; } }
-
-.quote-card{
-  background:var(--white);
-  border:1px solid var(--grey-200);
-  border-radius:var(--r-lg);
-  padding:34px 28px;
-  position:relative;
-  transition:transform .4s var(--ease-out), box-shadow .4s var(--ease-out), border-color .4s var(--ease-out);
-}
-.quote-card:hover{
-  transform:translateY(-6px) rotate(-.3deg);
-  box-shadow:var(--shadow-lg);
-  border-color:var(--blue-line);
-}
-.quote-card .qmark{
-  font-family:Georgia, serif;
-  font-size:56px;
-  line-height:1;
-  color:var(--blue-line);
-  margin-bottom:6px;
-}
-.quote-card:nth-child(3n+2) .qmark{ color:var(--green-line); }
-.quote-card p{
-  font-family:var(--f-display);
-  font-weight:600;
-  font-size:16.5px;
-  line-height:1.55;
-  color:var(--ink);
-}
-.quote-card .qmeta{
-  margin-top:20px;
-  font-family:var(--f-mono);
-  font-size:11px;
-  letter-spacing:1px;
-  text-transform:uppercase;
-  color:var(--grey-400);
-}
-
-
-/* ==========================================================================
-   15. CONCLUSION
+   06. AXE 3 · LA CONCLUSION
    ========================================================================== */
 
 .conclusion-section{
@@ -1322,13 +857,14 @@ nav.main-nav a.is-active{ color:var(--blue); background:var(--blue-soft); }
   margin-bottom:26px;
 }
 .conclusion-section h2{
-  font-size:clamp(30px, 5vw, 52px);
+  font-size:clamp(28px, 4.6vw, 46px);
   line-height:1.15;
   color:var(--white);
   margin-bottom:34px;
 }
+.conclusion-section .tag-row{ justify-content:center; margin:32px 0; }
 .conclusion-section .lead-text{
-  font-size:clamp(17px, 1.9vw, 21px);
+  font-size:clamp(16px, 1.8vw, 19px);
   color:rgba(255,255,255,.78);
   line-height:1.75;
   margin-bottom:16px;
@@ -1336,7 +872,7 @@ nav.main-nav a.is-active{ color:var(--blue); background:var(--blue-soft); }
 .conclusion-section .lead-text strong{ color:var(--white); }
 
 .signature-block{
-  margin-top:64px;
+  margin-top:56px;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -1368,7 +904,7 @@ nav.main-nav a.is-active{ color:var(--blue); background:var(--blue-soft); }
 
 
 /* ==========================================================================
-   16. FOOTER
+   07. FOOTER
    ========================================================================== */
 
 footer.site-footer{
@@ -1402,7 +938,7 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
 
 
 /* ==========================================================================
-   17. MEDIA PRINT — export PDF soigné
+   08. MEDIA PRINT — export PDF soigné
    ========================================================================== */
 
 @media print{
@@ -1437,9 +973,9 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
     background:none !important;
     color:var(--blue-deep) !important;
   }
-  .section{ padding:10mm 0; page-break-inside:avoid; }
-  .section-head{ margin-bottom:8mm; }
-  .ca-card, .project-card, .b2030-card, .why-card, .quote-card, .value-cell, .lesson-card, .tl-item{
+  .section{ padding:8mm 0; page-break-inside:avoid; }
+  .section-head{ margin-bottom:6mm; }
+  .ca-card, .compact-grid .item, .pipeline-step, .story-col{
     page-break-inside:avoid;
   }
   .conclusion-section{
@@ -1449,10 +985,14 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
   .conclusion-section h2{ color:var(--ink) !important; }
   .conclusion-section .lead-text{ color:var(--ink-soft) !important; }
   .conclusion-section .lead-text strong{ color:var(--ink) !important; }
+  .conclusion-section .tag-row span{ background:var(--grey-100) !important; border-color:var(--grey-200) !important; color:var(--ink-soft) !important; }
   .signature-block .sig{ color:var(--blue-deep) !important; }
   .signature-block .role{ color:var(--grey-600) !important; }
   .mgmt-statement{ background:var(--grey-50) !important; color:var(--ink) !important; border:1px solid var(--grey-200); }
   .mgmt-statement .signature-line{ color:var(--green-deep) !important; }
+  .stat-card{ background:var(--grey-50) !important; color:var(--ink) !important; border:1px solid var(--grey-200); }
+  .stat-card .stat-number{ -webkit-text-fill-color:var(--blue-deep) !important; background:none !important; color:var(--blue-deep) !important; }
+  .stat-card .stat-label{ color:var(--ink-soft) !important; }
   a[href]::after{ content:""; }
   .wrap, .wrap-narrow{ max-width:100% !important; }
   .pipeline{ overflow:visible; }
@@ -1481,16 +1021,8 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
     </a>
     <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
       <ul>
-        <li><a href="#qui-suis-je">Qui suis-je</a></li>
-        <li><a href="#mon-adn">Mon ADN</a></li>
-        <li><a href="#credit-agricole">Crédit Agricole</a></li>
-        <li><a href="#intelligence-artificielle">IA</a></li>
-        <li><a href="#projets">Projets</a></li>
-        <li><a href="#management">Management</a></li>
-        <li><a href="#vision-service">Vision du service</a></li>
-        <li><a href="#vision-banque">Banque 2030</a></li>
-        <li><a href="#timeline">Trajectoire</a></li>
-        <li><a href="#valeurs">Valeurs</a></li>
+        <li><a href="#moi">Moi</a></li>
+        <li><a href="#service">Le service</a></li>
         <li><a href="#conclusion">Conclusion</a></li>
       </ul>
     </nav>
@@ -1529,7 +1061,7 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
         Je suis passionné par <strong>les problèmes à résoudre</strong>. »
       </p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="#qui-suis-je">Découvrir mon parcours ↓</a>
+        <a class="btn btn-primary" href="#moi">Découvrir mon parcours ↓</a>
       </div>
     </div>
     <div class="scroll-cue" aria-hidden="true">
@@ -1539,661 +1071,158 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
   </section>
 
   <!-- ==========================================================================
-       01 · QUI SUIS-JE ?
+       01 · MOI
        ========================================================================== -->
-  <section class="section" id="qui-suis-je">
+  <section class="section" id="moi">
     <div class="wrap">
       <div class="section-head reveal">
-        <p class="eyebrow">01 · Qui suis-je</p>
-        <h2 class="sec-title">Ceci n'est pas un CV.<br>C'est l'histoire d'une même méthode, appliquée à trois terrains différents.</h2>
-        <p class="sec-lede">Un parcours ne se juge pas à la liste des postes occupés, mais à ce qui reste constant quand le contexte change. Voici ce qui, chez moi, n'a jamais changé.</p>
+        <p class="eyebrow">01 · Moi</p>
+        <h2 class="sec-title">Une méthode, pas un CV.</h2>
+        <p class="sec-lede">Huit ans d'armée, une reconversion, un terrain au Crédit Agricole : un seul fil conducteur. Je vois un problème là où d'autres voient une habitude — et je le résous avant qu'on me le demande.</p>
       </div>
 
       <div class="narrative-block reveal">
-        <p>Huit ans durant, l'uniforme a été le premier métier — jusqu'à l'encadrement de 150 personnes sur le terrain. Aucune école de commerce ni école d'ingénieur n'enseigne ce que ce métier impose au quotidien : <strong>tenir une mission quand tout se complique</strong>, faire progresser une équipe dans l'incertitude, décider quand aucune option n'est parfaite.</p>
-        <p>Ces huit années n'introduisent pas ce dossier pour lui donner du relief. Elles en sont le socle : chaque section qui suit — le Crédit Agricole, l'intelligence artificielle, le management — n'est qu'une nouvelle application de ce qui a été appris là.</p>
+        <p>L'uniforme a été mon premier métier pendant huit ans, jusqu'à l'encadrement de 150 personnes sur le terrain. Changer d'uniforme pour un poste au Crédit Agricole n'a rien changé aux repères : seul le terrain d'application a évolué. Le numérique a été choisi parce que les organisations s'y transforment vite, et parce que la discipline du terrain — tenir un délai, livrer sous contrainte, ne jamais transiger sur la qualité — s'y transpose sans perte.</p>
       </div>
 
-      <p class="eyebrow" style="margin-top:56px;">Ce que huit années d'encadrement ont réellement transmis</p>
-      <div class="lessons-grid reveal-stagger">
-        <article class="lesson-card">
-          <span class="num">01</span>
-          <h3>Discipline</h3>
-          <p>Faire ce qui doit être fait, même quand personne ne regarde. Un moteur de constance, pas une contrainte.</p>
-        </article>
-        <article class="lesson-card">
-          <span class="num">02</span>
-          <h3>Résilience</h3>
-          <p>Un projet qui échoue n'est jamais une fin. C'est une donnée de plus pour la tentative suivante.</p>
-        </article>
-        <article class="lesson-card">
-          <span class="num">03</span>
-          <h3>Leadership</h3>
-          <p>Diriger n'est pas donner des ordres. C'est donner du sens et être le premier à s'exposer quand ça se complique.</p>
-        </article>
-        <article class="lesson-card">
-          <span class="num">04</span>
-          <h3>Travail d'équipe</h3>
-          <p>Aucune mission ne se gagne seul. La performance collective prime toujours sur la performance individuelle.</p>
-        </article>
-        <article class="lesson-card">
-          <span class="num">05</span>
-          <h3>Prise de décision</h3>
-          <p>Décider vite avec l'information disponible, assumer, corriger. L'attentisme coûte plus cher que l'erreur.</p>
-        </article>
-        <article class="lesson-card">
-          <span class="num">06</span>
-          <h3>Gestion du stress</h3>
-          <p>La pression ne se subit pas, elle se structure. C'est dans les moments critiques que se voit la valeur réelle.</p>
-        </article>
-        <article class="lesson-card">
-          <span class="num">07</span>
-          <h3>Organisation</h3>
-          <p>Anticiper, planifier, structurer. La rigueur méthodologique transforme une idée en résultat livré.</p>
-        </article>
-        <article class="lesson-card">
-          <span class="num">08</span>
-          <h3>Engagement</h3>
-          <p>S'investir sans réserve, sans calcul. Un choix renouvelé chaque jour, jamais une posture figée.</p>
-        </article>
+      <div class="tag-row reveal-stagger">
+        <span>Discipline</span><span>Résilience</span><span>Leadership</span><span>Travail d'équipe</span><span>Décision sous pression</span><span>Gestion du stress</span><span>Organisation</span><span>Engagement</span>
+      </div>
+      <p class="sec-lede reveal">Ces huit réflexes se retrouvent, presque mot pour mot, dans chaque projet détaillé dans la section suivante.</p>
+
+      <p class="eyebrow reveal sub-head" style="margin-bottom:8px;">Mon raisonnement — un cycle, toujours le même</p>
+      <div class="tag-row reveal-stagger">
+        <span>Observer</span><span class="arrow">→</span><span>Comprendre</span><span class="arrow">→</span><span>Analyser</span><span class="arrow">→</span><span>Imaginer</span><span class="arrow">→</span><span>Construire</span><span class="arrow">→</span><span>Tester</span><span class="arrow">→</span><span>Déployer</span><span class="arrow">→</span><span>Former</span><span class="arrow">→</span><span>Mesurer</span><span class="arrow">→</span><span>Améliorer</span><span class="arrow">↻</span>
       </div>
 
-      <p class="pull-quote reveal">Ces huit lignes ne sont pas restées dans l'armée. On les retrouve, presque telles quelles, dans un outil de pilotage marketing, un cursus de formation Figma et un programme de transformation interne — trois exemples détaillés plus bas.</p>
-
-      <div class="story-columns">
-        <div class="story-col reveal">
-          <span class="tag">La bascule</span>
-          <h3>Une reconversion, pas une rupture</h3>
-          <p>Changer d'uniforme pour un poste au Crédit Agricole n'a rien changé aux repères ; seul le terrain d'application a évolué. Le numérique a été choisi parce que les organisations s'y transforment vite, et que la discipline opérationnelle du terrain — tenir un délai, livrer sous contrainte, ne jamais transiger sur la qualité — s'y transpose sans perte.</p>
-        </div>
-        <div class="story-col is-blue reveal">
-          <span class="tag">Aujourd'hui</span>
-          <h3>Le Crédit Agricole, un terrain à la mesure de cette exigence</h3>
-          <p>Une organisation centenaire, un maillage territorial unique, une culture de la proximité : le Crédit Agricole offre l'échelle qui manquait. Les équipes n'ont pas besoin d'un énième plan de transformation théorique — elles ont besoin d'outils qui tiennent, de formations qui s'ancrent et d'un accompagnement qui va jusqu'au bout. C'est précisément ce que les trois prochaines sections démontrent.</p>
-        </div>
+      <div class="stat-card reveal">
+        <span class="stat-number" data-count="80" data-suffix="%">0%</span>
+        <p class="stat-label">des projets menés au Crédit Agricole sont partis d'un constat de terrain, pas d'une commande. Impulsion Marketing — détaillé dans la section suivante — en est l'exemple.</p>
       </div>
+
+      <p class="eyebrow reveal sub-head" style="margin-bottom:8px;">Ce qui ne change pas d'un projet à l'autre</p>
+      <div class="tag-row reveal-stagger">
+        <span>Engagement</span><span>Responsabilité</span><span>Initiative</span><span>Innovation</span><span>Exigence</span><span>Esprit d'équipe</span><span>Leadership</span><span>Transmission</span>
+      </div>
+
+      <p class="pull-quote reveal">Je ne choisis jamais une technologie. Je choisis un problème.</p>
+      <p class="pull-quote is-green reveal">Un outil adopté par une seule personne n'a rien changé. Il change quelque chose le jour où l'équipe entière s'en empare.</p>
     </div>
   </section>
 
   <!-- ==========================================================================
-       02 · MON ADN
+       02 · LE SERVICE
        ========================================================================== -->
-  <section class="section alt" id="mon-adn">
+  <section class="section alt" id="service">
     <div class="wrap">
       <div class="section-head reveal">
-        <p class="eyebrow">02 · Mon ADN</p>
-        <h2 class="sec-title">Là où d'autres voient une habitude, un problème est déjà visible.</h2>
-        <p class="sec-lede">Face à un processus ou une friction que tout le monde a fini par accepter, une question revient systématiquement : pourquoi fait-on ça comme ça ? « On a toujours fait ainsi » n'a jamais été une réponse suffisante.</p>
+        <p class="eyebrow">02 · Le service</p>
+        <h2 class="sec-title">Ce que j'ai déjà fait, ce que je ferais à la tête de ce service.</h2>
+        <p class="sec-lede">Trois chantiers au Crédit Agricole, cinq projets construits hors les murs, une seule méthode — et une vision concrète pour l'unité péri-informatique visée : data, développement, IA.</p>
       </div>
 
-      <div class="adn-layout">
-        <div class="adn-text reveal">
-          <p class="eyebrow" style="margin-bottom:8px;">Mon raisonnement</p>
-          <h3 style="font-size:22px; margin-bottom:28px;">Un cycle, toujours le même</h3>
-
-          <div class="flow-diagram">
-            <div class="flow-step"><span class="node">01</span><h4>Observer</h4><p>Regarder le réel, pas le processus tel qu'il est documenté.</p></div>
-            <div class="flow-step"><span class="node">02</span><h4>Comprendre</h4><p>Identifier la cause, pas seulement le symptôme visible.</p></div>
-            <div class="flow-step"><span class="node">03</span><h4>Analyser</h4><p>Mesurer l'impact réel de la friction, sur les équipes et le résultat.</p></div>
-            <div class="flow-step"><span class="node">04</span><h4>Imaginer</h4><p>Explorer plusieurs solutions avant de s'attacher à la première idée.</p></div>
-            <div class="flow-step"><span class="node">05</span><h4>Construire</h4><p>Concevoir une réponse concrète, pas une simple recommandation.</p></div>
-            <div class="flow-step"><span class="node">06</span><h4>Tester</h4><p>Confronter la solution au réel, avant de l'imposer à tous.</p></div>
-            <div class="flow-step"><span class="node">07</span><h4>Déployer</h4><p>Passer du prototype à l'usage, à l'échelle de l'organisation.</p></div>
-            <div class="flow-step"><span class="node">08</span><h4>Former</h4><p>Transmettre les usages — un outil sans formation reste une intention.</p></div>
-            <div class="flow-step"><span class="node">09</span><h4>Mesurer</h4><p>Suivre l'adoption réelle et l'impact produit, pas seulement le lancement.</p></div>
-            <div class="flow-step"><span class="node">10</span><h4>Améliorer</h4><p>Itérer à partir de l'usage réel — jamais figer une solution.</p></div>
-          </div>
-          <div class="flow-loop"><span class="arrow">↻</span> Le cycle recommence. Toujours.</div>
-        </div>
-
-        <div class="adn-side">
-          <div class="stat-card reveal">
-            <span class="stat-number" data-count="80" data-suffix="%">0%</span>
-            <p class="stat-label">des projets menés au Crédit Agricole sont partis d'un constat de terrain — pas d'une commande, pas d'un cahier des charges.</p>
-            <p class="stat-follow">Impulsion Marketing en est l'exemple : personne ne l'a demandé, une friction observée l'a rendu nécessaire. Le détail de ce projet suit dans la section Crédit Agricole. La solution s'y construit avant que la demande ne soit formulée — c'est le réflexe, pas l'exception.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       03 · CRÉDIT AGRICOLE
-       ========================================================================== -->
-  <section class="section" id="credit-agricole">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">03 · Crédit Agricole</p>
-        <h2 class="sec-title">Trois chantiers, une même trajectoire : du constat à l'usage installé.</h2>
-        <p class="sec-lede">Aucun des trois projets ci-dessous n'a démarré sur commande. Chacun part d'un irritant repéré sur le terrain, se construit avec les équipes concernées, et se mesure à l'adoption qu'il obtient une fois le lancement passé.</p>
-      </div>
-
+      <p class="eyebrow sub-head reveal">Preuves au Crédit Agricole</p>
       <div class="ca-cards reveal-stagger">
         <article class="ca-card">
-          <div class="ca-head">
-            <h3>Impulsion Marketing</h3>
-            <span class="ca-index">01</span>
-          </div>
-          <div class="ca-block">
-            <span class="lbl">Contexte</span>
-            <p>Les équipes marketing multipliaient les demandes ponctuelles, sans visibilité ni priorisation partagée, générant délais et frustrations des deux côtés de la chaîne.</p>
-          </div>
+          <h3>Impulsion Marketing</h3>
           <div class="ca-block">
             <span class="lbl">Problème</span>
-            <p>Aucun outil ne permettait de cadrer, suivre et prioriser les sollicitations marketing à l'échelle de la structure.</p>
+            <p>Les équipes marketing multipliaient les demandes ponctuelles, sans visibilité ni priorisation partagée.</p>
           </div>
           <div class="ca-block">
-            <span class="lbl">Solution</span>
-            <p>J'ai conçu et déployé <strong>Impulsion Marketing</strong>, un outil de pilotage qui structure, priorise et fluidifie la relation entre équipes métier et équipes créatives.</p>
-          </div>
-          <div class="ca-block">
-            <span class="lbl">Impact</span>
-            <p>Délais de traitement réduits, visibilité totale sur la charge, satisfaction des équipes en nette hausse.</p>
+            <span class="lbl">Solution & impact</span>
+            <p>Conception et déploiement d'un outil de pilotage qui structure et priorise les sollicitations — délais réduits, charge visible, satisfaction en hausse.</p>
           </div>
         </article>
-
         <article class="ca-card">
-          <div class="ca-head">
-            <h3>Déploiement Figma</h3>
-            <span class="ca-index">02</span>
-          </div>
-          <div class="ca-block">
-            <span class="lbl">Contexte</span>
-            <p>Les maquettes circulaient en fichiers statiques, sans version partagée : chaque échange créatif perdait un aller-retour à expliquer ce qui avait changé.</p>
-          </div>
-          <div class="ca-block">
-            <span class="lbl">Formation</span>
-            <p>Un cursus construit et animé en interne, de la prise en main jusqu'aux usages avancés de collaboration en temps réel.</p>
-          </div>
-          <div class="ca-block">
-            <span class="lbl">Accompagnement</span>
-            <p>Un suivi individuel et collectif dans la durée, pour ancrer le réflexe au-delà de la formation initiale.</p>
-          </div>
-          <div class="ca-block">
-            <span class="lbl">Impact</span>
-            <p>Figma est passé d'outil confidentiel à standard d'équipe : les collaborateurs formés conçoivent désormais leurs maquettes en autonomie complète.</p>
-          </div>
-        </article>
-
-        <article class="ca-card is-wide">
-          <div class="ca-head">
-            <h3>Transformation CSCA</h3>
-            <span class="ca-index">03</span>
-          </div>
-          <div class="ca-block">
-            <span class="lbl">Contexte</span>
-            <p>Le CSCA est un ancien type de compte : chaque client qui en détient un doit être identifié puis orienté vers une offre plus adaptée à sa situation actuelle.</p>
-          </div>
+          <h3>Déploiement Figma</h3>
           <div class="ca-block">
             <span class="lbl">Problème</span>
-            <p>Le recensement des comptes à transformer tenait sur un fichier Excel partagé, et le conseiller devait ensuite arbitrer seul, sans outil, quelle nouvelle offre était la plus pertinente.</p>
+            <p>Les maquettes circulaient en fichiers statiques, sans version partagée.</p>
           </div>
           <div class="ca-block">
-            <span class="lbl">Solution</span>
-            <p>Un logiciel conçu, développé et livré : il recense automatiquement tous les comptes à transformer — à la place du fichier Excel — et met en avant, pour chaque client, l'offre la plus pertinente.</p>
+            <span class="lbl">Solution & impact</span>
+            <p>Formation et accompagnement jusqu'à l'autonomie complète — Figma est passé d'outil confidentiel à standard d'équipe.</p>
+          </div>
+        </article>
+        <article class="ca-card">
+          <h3>Transformation CSCA</h3>
+          <div class="ca-block">
+            <span class="lbl">Problème</span>
+            <p>Le recensement des comptes à transformer tenait sur un fichier Excel, sans aide à la décision pour le conseiller.</p>
           </div>
           <div class="ca-block">
-            <span class="lbl">Impact</span>
-            <p>Un suivi fiabilisé qui remplace un tableur, et une recommandation immédiate en rendez-vous, là où le conseiller devait auparavant arbitrer seul.</p>
+            <span class="lbl">Solution & impact</span>
+            <p>Logiciel conçu, développé et livré : il recense ces comptes et recommande la meilleure offre — suivi fiabilisé, recommandation immédiate.</p>
           </div>
         </article>
       </div>
+      <p class="pull-quote reveal">Aucun de ces trois chantiers n'était au planning avant d'être repéré sur le terrain.</p>
 
-      <p class="pull-quote reveal">Aucun de ces trois chantiers n'était au planning avant d'être repéré sur le terrain. C'est ce réflexe-là, plus que les outils eux-mêmes, qui se répète d'un projet à l'autre.</p>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       04 · INTELLIGENCE ARTIFICIELLE
-       ========================================================================== -->
-  <section class="section alt" id="intelligence-artificielle">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow is-green">04 · Intelligence Artificielle</p>
-        <h2 class="sec-title">ChatGPT n'est pas le sujet.<br>Ce que l'IA transforme dans une organisation, si.</h2>
-        <p class="sec-lede">Un prompt bien tourné n'est pas une compétence différenciante — encore moins une stratégie. La valeur ne se trouve jamais dans l'outil. Elle se trouve dans cinq endroits précis :</p>
+      <p class="eyebrow sub-head reveal">Projets personnels, même méthode</p>
+      <div class="compact-grid reveal-stagger">
+        <div class="item"><strong>Solayia</strong><p>Rendre la technologie et l'IA accessibles aux indépendants, sans jargon — jusqu'au premier client réel.</p></div>
+        <div class="item"><strong>KevinOS</strong><p>Une plateforme auto-hébergée pilotée par KAI, un assistant conversationnel qui orchestre photos, films, documents et domotique derrière une seule voix.</p></div>
+        <div class="item"><strong>IA téléphonique</strong><p>Un agent vocal qui qualifie et oriente les appels entrants, pour rendre du temps humain aux échanges à forte valeur.</p></div>
+        <div class="item"><strong>IA agentique</strong><p>Des architectures d'agents autonomes qui exécutent un processus métier de bout en bout — pas seulement une réponse.</p></div>
+        <div class="item"><strong>n8n</strong><p>Le même outil qu'au Crédit Agricole, appliqué à Solayia : l'automatisation comme réflexe, pas comme projet exceptionnel.</p></div>
       </div>
 
-      <ul class="ia-value-list reveal-stagger">
-        <li><strong>Les usages</strong> — ce que l'on fait vraiment, au quotidien</li>
-        <li><strong>Les process</strong> — comment le travail est réellement organisé</li>
-        <li><strong>L'accompagnement</strong> — rendre chacun autonome, pas dépendant</li>
-        <li><strong>La conduite du changement</strong> — faire accepter avant de faire adopter</li>
-        <li><strong>L'adoption</strong> — l'usage qui reste, une fois l'enthousiasme retombé</li>
-      </ul>
+      <p class="eyebrow is-green sub-head reveal">Ma vision de ce service</p>
+      <h3 class="reveal" style="font-size:22px; margin-bottom:16px;">Une unité, trois métiers, un seul point d'entrée.</h3>
+      <p class="sec-lede reveal">Ce périmètre n'a pas toujours couvert la donnée et l'IA : il n'y a pas si longtemps, c'était une équipe de développeurs. Son élargissement récent pose une question concrète — comment faire converger trois métiers qui avançaient chacun de leur côté, avec des silos entre expertises, un flux de demandes non arbitré, et une IA dispersée qui ne suit aucun schéma d'industrialisation.</p>
 
-      <p class="eyebrow is-green" style="margin-top:8px;">De la friction à la valeur</p>
       <div class="pipeline reveal-stagger">
-        <div class="pipeline-step"><span class="pnum">01</span><h4>Problème</h4><p>Une friction réelle, observée sur le terrain</p></div>
-        <div class="pipeline-step"><span class="pnum">02</span><h4>Process</h4><p>Le chemin actuel, cartographié précisément</p></div>
-        <div class="pipeline-step"><span class="pnum">03</span><h4>IA</h4><p>Le bon modèle, pour la bonne tâche</p></div>
-        <div class="pipeline-step"><span class="pnum">04</span><h4>Automatisation</h4><p>Un usage intégré, pas une démo isolée</p></div>
-        <div class="pipeline-step"><span class="pnum">05</span><h4>Valeur</h4><p>Un gain mesurable, durable, adopté</p></div>
+        <div class="pipeline-step"><span class="pnum">01</span><h4>Point d'entrée unique</h4><p>Toute demande passe par un cadre de priorisation commun, sur le modèle d'Impulsion Marketing.</p></div>
+        <div class="pipeline-step"><span class="pnum">02</span><h4>Trinômes transverses</h4><p>Un cas d'usage, un trinôme : data analyste, développeur et chargé IA, du diagnostic à la mise en production.</p></div>
+        <div class="pipeline-step"><span class="pnum">03</span><h4>Pipeline d'industrialisation</h4><p>Chaque initiative IA suit le même chemin jusqu'à la valeur mesurée. Ce qui n'est pas adopté n'est pas terminé.</p></div>
       </div>
 
-      <p class="pull-quote is-green ia-close reveal">Ce schéma n'est pas théorique : les projets présentés dans la section suivante — un agent vocal, un système d'agents autonomes — en sont l'application directe. Et cette même grille de lecture est celle qu'un manager doit tenir pour son équipe : une IA qui ne change aucun usage n'a rien transformé, elle a juste occupé du temps.</p>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       05 · MES PROJETS
-       ========================================================================== -->
-  <section class="section" id="projets">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">05 · Mes projets</p>
-        <h2 class="sec-title">Le même schéma Problème → Process → IA → Valeur, appliqué hors les murs.</h2>
-        <p class="sec-lede">Ces projets n'ont pas été commandés par un employeur : ils ont été construits sur le temps personnel, pour vérifier qu'une méthode tient au-delà d'un seul contexte. Aucun n'est resté à l'état d'idée.</p>
-      </div>
-
-      <div class="projects-grid reveal-stagger">
-
-        <article class="project-card">
-          <div class="p-head">
-            <p class="p-kicker">Entrepreneuriat</p>
-            <h3>Solayia</h3>
-          </div>
-          <div class="p-body">
-            <div class="p-row"><span class="lbl">Pourquoi</span><p>Les indépendants et petites structures ont besoin d'outils digitaux et d'automatisations IA — mais rarement le temps ni le budget pour se les faire construire sur mesure.</p></div>
-            <div class="p-row"><span class="lbl">Vision</span><p>Rendre la technologie et l'IA accessibles à des non-experts, sans complexité inutile ni jargon.</p></div>
-            <div class="p-row"><span class="lbl">Objectif</span><p>Concevoir des solutions digitales et des automatisations clé en main, du premier échange client jusqu'à la mise en production.</p></div>
-            <div class="p-row"><span class="lbl">Compétences développées</span><p>Conception produit, développement full-stack, automatisation IA, relation client, pilotage de projet en autonomie totale.</p></div>
-            <div class="p-row"><span class="lbl">Ce que ça prouve</span><p>Qu'une vision devient une entreprise seulement si elle survit au premier client réel — pas au premier prototype.</p></div>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="p-head">
-            <p class="p-kicker">Plateforme personnelle auto-hébergée</p>
-            <h3>KevinOS</h3>
-          </div>
-          <div class="p-body">
-            <div class="p-row"><span class="lbl">Pourquoi</span><p>Gérer une maison numérique passait par une dizaine d'applications séparées — photos, films, documents, domotique — sans le moindre point d'entrée commun.</p></div>
-            <div class="p-row"><span class="lbl">Vision</span><p>Un cerveau unique pour cette maison numérique : un seul point d'entrée, en langage naturel, plutôt que dix applications à faire dialoguer soi-même.</p></div>
-            <div class="p-row"><span class="lbl">Objectif</span><p>Ne pas réinventer les meilleurs outils (Immich, Jellyfin, Nextcloud, Home Assistant…) mais les orchestrer en coulisses via <strong>KAI</strong>, l'assistant qui exécute chaque demande. Quatre piliers opérationnels aujourd'hui — Vision, Media, Drive, Home — capables de collaborer entre eux : « active le mode cinéma » baisse les volets, tamise les lumières et lance le film, en une seule phrase.</p></div>
-            <div class="p-row"><span class="lbl">Compétences développées</span><p>Auto-hébergement, orchestration multi-services, architecture d'agent conversationnel, intégration domotique, conception d'expérience unifiée.</p></div>
-            <div class="p-row"><span class="lbl">Ce que ça prouve</span><p>C'est aussi mon terrain de test grandeur nature pour l'IA et l'automatisation — agenda, feuille de route, organisation personnelle. Un laboratoire avant d'être un outil.</p></div>
-          </div>
-        </article>
-
-        <article class="project-card is-ia">
-          <div class="p-head">
-            <p class="p-kicker">Intelligence artificielle</p>
-            <h3>IA téléphonique</h3>
-          </div>
-          <div class="p-body">
-            <div class="p-row"><span class="lbl">Pourquoi</span><p>Une large part des appels entrants sont répétitifs — un premier niveau de contact qualifié peut les absorber sans dégrader l'expérience.</p></div>
-            <div class="p-row"><span class="lbl">Vision</span><p>Un accueil intelligent disponible en continu, qui rend du temps humain pour les échanges à forte valeur ajoutée.</p></div>
-            <div class="p-row"><span class="lbl">Objectif</span><p>Un agent vocal capable de qualifier, répondre et orienter un appel entrant sans script rigide.</p></div>
-            <div class="p-row"><span class="lbl">Compétences développées</span><p>Traitement du langage naturel, conception de flux conversationnels, intégration d'API, expérience utilisateur vocale.</p></div>
-            <div class="p-row"><span class="lbl">Ce que ça prouve</span><p>L'automatisation intelligente peut améliorer la qualité de service perçue — pas seulement réduire un coût de traitement.</p></div>
-          </div>
-        </article>
-
-        <article class="project-card is-ia">
-          <div class="p-head">
-            <p class="p-kicker">Intelligence artificielle</p>
-            <h3>IA agentique</h3>
-          </div>
-          <div class="p-body">
-            <div class="p-row"><span class="lbl">Pourquoi</span><p>Générer une réponse ne suffit plus : la prochaine génération d'usages IA exécute une tâche de bout en bout, sans supervision à chaque étape.</p></div>
-            <div class="p-row"><span class="lbl">Vision</span><p>Des agents capables d'enchaîner des actions, de décider, de s'adapter à un contexte qui change — pas seulement de produire du texte.</p></div>
-            <div class="p-row"><span class="lbl">Objectif</span><p>Concevoir des architectures d'agents autonomes exécutant un processus métier complet, sans intervention à chaque relais.</p></div>
-            <div class="p-row"><span class="lbl">Compétences développées</span><p>Architecture agentique, orchestration de workflows IA, prompt engineering avancé, intégration systèmes.</p></div>
-            <div class="p-row"><span class="lbl">Ce que ça prouve</span><p>Une compréhension de l'IA d'entreprise construite avant que le sujet ne devienne un standard de poste.</p></div>
-          </div>
-        </article>
-
-        <article class="project-card full-width">
-          <div class="p-head">
-            <p class="p-kicker">Automatisation</p>
-            <h3>n8n</h3>
-          </div>
-          <div class="p-body">
-            <div class="p-row"><span class="lbl">Pourquoi</span><p>La majorité des tâches répétitives d'une organisation n'ont pas besoin d'un développement lourd pour disparaître — juste d'un workflow bien conçu. C'est le même outil que celui utilisé dans les automatisations Crédit Agricole listées plus haut : ici, il est appliqué au fonctionnement de Solayia.</p></div>
-            <div class="p-row"><span class="lbl">Vision</span><p>Faire de l'automatisation un réflexe du quotidien, pas un projet exceptionnel réservé à la DSI.</p></div>
-            <div class="p-row"><span class="lbl">Objectif</span><p>Des workflows connectant les outils métier entre eux, sans dépendance à un développement sur-mesure coûteux.</p></div>
-            <div class="p-row"><span class="lbl">Compétences développées</span><p>Automatisation no-code / low-code, intégration d'API, cartographie de process, optimisation opérationnelle.</p></div>
-            <div class="p-row"><span class="lbl">Ce que ça prouve</span><p>Le même réflexe fonctionne à deux échelles : une caisse régionale et une petite structure n'ont, au fond, pas des besoins si différents.</p></div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       06 · POURQUOI LE MANAGEMENT
-       ========================================================================== -->
-  <section class="section alt" id="management">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">06 · Pourquoi le management</p>
-        <h2 class="sec-title">Data, développement, IA : trois métiers, un seul cap.</h2>
-        <p class="sec-lede">Diriger une unité péri-informatique n'exige pas de maîtriser chaque discipline mieux que ceux qui la pratiquent — mais d'aligner des métiers qui ne raisonnent pas de la même façon vers un même résultat.</p>
-      </div>
-
-      <div class="mgmt-layout">
-        <div class="mgmt-list reveal-stagger">
-          <div class="mgmt-item">
-            <span class="ic">01</span>
-            <div><h4>Multiplier l'impact</h4><p>Un manager ne fait pas le travail de son équipe — il rend chaque personne, quel que soit son métier, capable d'un travail qu'elle n'aurait pas produit seule.</p></div>
-          </div>
-          <div class="mgmt-item">
-            <span class="ic">02</span>
-            <div><h4>Accompagner</h4><p>Une présence dans les moments qui comptent — un blocage, une erreur, un doute — pas seulement dans les points d'avancement.</p></div>
-          </div>
-          <div class="mgmt-item">
-            <span class="ic">03</span>
-            <div><h4>Faire grandir</h4><p>Le passage d'un outil confidentiel à un standard d'équipe (voir Figma, section 3) ne s'est pas fait par décret : il s'est fait collaborateur par collaborateur.</p></div>
-          </div>
-          <div class="mgmt-item">
-            <span class="ic">04</span>
-            <div><h4>Créer un espace pour les idées</h4><p>Un environnement où une idée imparfaite peut être dite tout haut — c'est de là que sont partis 80 % des projets cités dans ce dossier.</p></div>
-          </div>
-          <div class="mgmt-item">
-            <span class="ic">05</span>
-            <div><h4>Faire converger les expertises</h4><p>Un data analyste mesure, un développeur construit, un chargé IA expérimente : le rôle du manager est de faire se répondre ces trois logiques, pas de les uniformiser.</p></div>
-          </div>
-        </div>
-
-        <div class="mgmt-statement reveal">
-          <p>Le management est une responsabilité.<br>Pas un statut.</p>
-          <p class="signature-line">— Testée sur un cursus Figma, prête pour une unité data / dev / IA</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       07 · VISION DU SERVICE
-       ========================================================================== -->
-  <section class="section alt" id="vision-service">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">07 · Vision du service</p>
-        <h2 class="sec-title">Une unité, trois métiers, un seul point d'entrée.</h2>
-        <p class="sec-lede">Ce périmètre n'a pas toujours couvert la donnée et l'IA : il n'y a pas si longtemps, c'était une équipe de développeurs. Son élargissement récent pose une question concrète — comment faire converger trois métiers qui, jusqu'ici, avançaient chacun de leur côté.</p>
-      </div>
-
-      <p class="eyebrow" style="margin-bottom:8px;">Le constat de départ</p>
-      <div class="b2030-grid reveal-stagger" style="margin-bottom:64px;">
-        <article class="b2030-card">
-          <span class="b-num">01</span>
-          <h3>Silos entre expertises</h3>
-          <p>Data, développement et IA ont chacun leurs priorités, leurs outils, leur vocabulaire. Un même cas d'usage client traverse les trois sans qu'aucune équipe n'en ait la vue d'ensemble.</p>
-        </article>
-        <article class="b2030-card">
-          <span class="b-num">02</span>
-          <h3>Un flux de demandes non arbitré</h3>
-          <p>Les sollicitations arrivent en direct à chaque expertise, sans point d'entrée commun ni priorisation partagée — exactement la situation qu'Impulsion Marketing a déjà résolue à l'échelle du marketing.</p>
-        </article>
-        <article class="b2030-card">
-          <span class="b-num">03</span>
-          <h3>Une IA dispersée</h3>
-          <p>Des initiatives existent, portées ponctuellement par ceux que le sujet intéresse — mais aucune ne suit le schéma Problème → Process → IA → Automatisation → Valeur présenté plus haut.</p>
-        </article>
-      </div>
-
-      <p class="eyebrow is-green" style="margin-bottom:8px;">Le modèle de fonctionnement à mettre en place</p>
-      <div class="pipeline reveal-stagger" style="margin-bottom:64px;">
-        <div class="pipeline-step"><span class="pnum">01</span><h4>Point d'entrée unique</h4><p>Toute demande — data, dev ou IA — passe par un cadre de priorisation commun, sur le modèle d'Impulsion Marketing.</p></div>
-        <div class="pipeline-step"><span class="pnum">02</span><h4>Trinômes transverses</h4><p>Un cas d'usage, un trinôme : data analyste, développeur et chargé IA y travaillent ensemble, du diagnostic à la mise en production.</p></div>
-        <div class="pipeline-step"><span class="pnum">03</span><h4>Pipeline d'industrialisation</h4><p>Chaque initiative IA suit le même chemin jusqu'à la valeur mesurée. Ce qui n'est pas adopté n'est pas considéré comme terminé.</p></div>
-      </div>
-
-      <p class="eyebrow" style="margin-bottom:8px;">Deux horizons, une même trajectoire</p>
-      <div class="story-columns reveal-stagger" style="margin-top:0;">
+      <div class="story-columns reveal-stagger">
         <div class="story-col">
           <span class="tag">100 premiers jours</span>
-          <h3>Cadrer avant de construire</h3>
-          <p>Cartographier les trois expertises et leurs irritants réels — pas ceux qu'on suppose. Mettre en place le point d'entrée unique des demandes. Choisir un premier cas d'usage pour tester le fonctionnement en trinôme, du problème jusqu'à l'adoption.</p>
+          <p>Cartographier les irritants réels. Mettre en place le point d'entrée unique. Tester le fonctionnement en trinôme sur un premier cas d'usage.</p>
         </div>
         <div class="story-col is-blue">
           <span class="tag">À 2-3 ans</span>
-          <h3>Une unité qui pense en cas d'usage</h3>
-          <p>Le service n'est plus trois équipes juxtaposées mais une unité qui pense en cas d'usage. Les parcours de compétences se construisent entre data, dev et IA plutôt qu'en silos. L'industrialisation devient un réflexe, pas un projet exceptionnel — la même trajectoire que celle dessinée dans Banque 2030.</p>
+          <p>Une unité qui pense en cas d'usage, pas trois équipes juxtaposées. Les compétences se construisent entre data, dev et IA. L'industrialisation devient un réflexe.</p>
         </div>
       </div>
+      <p class="pull-quote is-green reveal">Ce n'est pas une équipe de développeurs à qui l'on a ajouté de la data et de l'IA. C'est une unité de résolution de problèmes, dont le développement, la donnée et l'IA sont les trois outils.</p>
 
-      <p class="pull-quote reveal" style="margin-top:56px;">Ce n'est pas une équipe de développeurs à qui l'on a ajouté de la data et de l'IA. C'est une unité de résolution de problèmes, dont le développement, la donnée et l'IA sont les trois outils.</p>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       08 · MA VISION DE LA BANQUE — BANQUE 2030
-       ========================================================================== -->
-  <section class="section" id="vision-banque">
-    <div class="wrap">
-      <div class="b2030-hero reveal">
-        <p class="eyebrow is-green" style="justify-content:center;">08 · Ma vision de la banque</p>
-        <h2 class="big">Banque 2030</h2>
-        <p class="sec-lede" style="margin:20px auto 0; text-align:center;">Six mutations attendent les banques de réseau dans les prochaines années. Voici comment le Crédit Agricole peut les aborder en position d'avance plutôt que de rattrapage.</p>
+      <p class="eyebrow sub-head reveal">Le management que ça demande</p>
+      <p class="sec-lede reveal">Diriger une unité péri-informatique n'exige pas de maîtriser chaque discipline mieux que ceux qui la pratiquent — mais d'aligner des métiers qui ne raisonnent pas de la même façon vers un même résultat. Un data analyste mesure, un développeur construit, un chargé IA expérimente : le rôle du manager est de faire se répondre ces trois logiques, pas de les uniformiser.</p>
+      <div class="mgmt-statement reveal">
+        <p>Le management est une responsabilité.<br>Pas un statut.</p>
+        <p class="signature-line">— Testée sur un cursus Figma, prête pour une unité data / dev / IA</p>
       </div>
 
-      <div class="b2030-grid reveal-stagger">
-        <article class="b2030-card">
-          <span class="b-num">IA</span>
-          <h3>Intelligence artificielle</h3>
-          <p>Une IA intégrée nativement dans chaque processus — pas ajoutée en surcouche, ni cantonnée à un pilote isolé.</p>
-        </article>
-        <article class="b2030-card">
-          <span class="b-num">01</span>
-          <h3>Automatisation</h3>
-          <p>Les tâches à faible valeur ajoutée disparaissent des journées des collaborateurs, remplacées par des workflows autonomes.</p>
-        </article>
-        <article class="b2030-card">
-          <span class="b-num">02</span>
-          <h3>Conseillers augmentés</h3>
-          <p>Le conseiller garde la relation humaine — l'IA lui donne l'information juste, au bon moment, pour décider mieux et plus vite.</p>
-        </article>
-        <article class="b2030-card">
-          <span class="b-num">03</span>
-          <h3>Agents IA</h3>
-          <p>Des agents autonomes traitent en continu les demandes simples, disponibles en permanence, pendant que les équipes se concentrent sur le conseil à haute valeur.</p>
-        </article>
-        <article class="b2030-card">
-          <span class="b-num">04</span>
-          <h3>Personnalisation</h3>
-          <p>Chaque client bénéficie d'un accompagnement sur-mesure, construit à partir de sa donnée — pas d'un parcours standardisé.</p>
-        </article>
-        <article class="b2030-card">
-          <span class="b-num">05</span>
-          <h3>Transformation continue</h3>
-          <p>La banque ne s'adapte plus après coup : elle anticipe, expérimente et itère en continu.</p>
-        </article>
-      </div>
-
-      <div class="b2030-note reveal">
-        <p class="pull-quote is-green">Rien ici ne remplace l'humain par la machine. La machine libère du temps humain pour ce que seul un humain sait vraiment faire : comprendre, conseiller, rassurer.</p>
-        <p class="pull-quote is-green" style="margin-top:24px;">Ma contribution à cette trajectoire ne serait pas de l'écrire sur une slide, mais de la construire à la tête d'une unité péri-informatique — data, développement, IA — projet après projet, exactement comme Impulsion Marketing, Figma et CSCA l'ont été : un irritant identifié, une solution testée avec les équipes concernées, un usage qui s'installe. C'est la méthode qui a fait ses preuves ; 2030 n'est qu'un terrain plus large pour l'appliquer.</p>
+      <p class="eyebrow is-green sub-head reveal">Et demain : Banque 2030</p>
+      <p class="sec-lede reveal">IA intégrée nativement, conseillers augmentés par la donnée, agents autonomes sur les demandes simples, personnalisation, transformation continue : voilà la direction que prennent les banques de réseau. Y contribuer ne se fait pas sur une slide, mais projet après projet — exactement comme Impulsion Marketing, Figma et CSCA l'ont été.</p>
+      <div class="tag-row is-green reveal-stagger">
+        <span>IA native</span><span>Automatisation</span><span>Conseillers augmentés</span><span>Agents IA</span><span>Personnalisation</span><span>Transformation continue</span>
       </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       08 · POURQUOI MOI
-       ========================================================================== -->
-  <section class="section alt" id="pourquoi-moi">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">09 · Pourquoi moi</p>
-        <h2 class="sec-title">Pas des promesses. Des preuves, déjà citées plus haut.</h2>
-        <p class="sec-lede">Chacune des affirmations de ce dossier renvoie à un fait précis, pas à une intention. Voici le rappel, en une ligne à chaque fois.</p>
-      </div>
-
-      <div class="why-grid reveal-stagger">
-        <article class="why-card"><span class="w-glyph">01</span><h3>Initiative</h3><p>Impulsion Marketing, Figma, CSCA : trois projets sur trois, jamais commandés.</p></article>
-        <article class="why-card"><span class="w-glyph">02</span><h3>Résolution de problèmes</h3><p>Le cycle Observer → Améliorer n'est pas une théorie affichée : c'est ce qui a produit chaque outil cité ici.</p></article>
-        <article class="why-card"><span class="w-glyph">03</span><h3>Capacité à fédérer</h3><p>Un outil confidentiel devenu standard d'équipe ne s'impose pas — il se fait adopter, collaborateur par collaborateur.</p></article>
-        <article class="why-card"><span class="w-glyph">04</span><h3>Exécution</h3><p>Solayia et KevinOS existent hors de tout cadre salarié : l'idée a été poussée jusqu'au produit, seule.</p></article>
-        <article class="why-card"><span class="w-glyph">05</span><h3>Passage à l'échelle</h3><p>De l'audit d'irritant CSCA à la solution déployée : le même principe appliqué à chaque chantier.</p></article>
-        <article class="why-card"><span class="w-glyph">06</span><h3>Orchestration de systèmes</h3><p>KevinOS fait dialoguer quatre services distincts derrière un seul assistant conversationnel — une architecture pensée seul, sans équipe technique.</p></article>
-        <article class="why-card"><span class="w-glyph">07</span><h3>Vision IA appliquée</h3><p>Un agent vocal et un système d'agents autonomes : la grille Problème → Process → IA → Valeur, pas une démonstration isolée.</p></article>
-        <article class="why-card"><span class="w-glyph">08</span><h3>Sens du collectif</h3><p>Huit ans à faire progresser une équipe avant de commencer à en diriger une — la formation Figma en est la première preuve, hors du cadre militaire.</p></article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       09 · TIMELINE
-       ========================================================================== -->
-  <section class="section" id="timeline">
-    <div class="wrap-narrow">
-      <div class="section-head reveal">
-        <p class="eyebrow">10 · Trajectoire</p>
-        <h2 class="sec-title">Ce que chaque étape a ajouté à la suivante.</h2>
-        <p class="sec-lede">Pas une chronologie de postes : une accumulation. Chaque étape a rendu la suivante possible.</p>
-      </div>
-
-      <div class="timeline reveal-stagger">
-        <div class="tl-line" aria-hidden="true"></div>
-
-        <div class="tl-item">
-          <span class="tl-dot" aria-hidden="true"></span>
-          <p class="tl-tag">Point de départ · 8 ans</p>
-          <h3>Armée</h3>
-          <p>A donné le socle : discipline, décision sous pression, sens du collectif — repris tel quel dans tout ce qui suit.</p>
-        </div>
-        <div class="tl-item">
-          <span class="tl-dot" aria-hidden="true"></span>
-          <p class="tl-tag">La bascule</p>
-          <h3>Reconversion</h3>
-          <p>A transposé ce socle au numérique — sans le diluer, seulement en changeant de terrain d'application.</p>
-        </div>
-        <div class="tl-item">
-          <span class="tl-dot" aria-hidden="true"></span>
-          <p class="tl-tag">Nouveau terrain</p>
-          <h3>Crédit Agricole</h3>
-          <p>A offert l'échelle qui manquait : une organisation où une méthode individuelle peut devenir un usage collectif.</p>
-        </div>
-        <div class="tl-item">
-          <span class="tl-dot" aria-hidden="true"></span>
-          <p class="tl-tag">Posture</p>
-          <h3>Initiative</h3>
-          <p>A fixé le réflexe qui suit depuis : repérer l'irritant avant qu'il ne remonte, proposer avant qu'on ne demande.</p>
-        </div>
-        <div class="tl-item">
-          <span class="tl-dot" aria-hidden="true"></span>
-          <p class="tl-tag">Premier projet</p>
-          <h3>Impulsion Marketing</h3>
-          <p>A validé ce réflexe une première fois : un constat de terrain devenu outil, puis usage adopté.</p>
-        </div>
-        <div class="tl-item">
-          <span class="tl-dot" aria-hidden="true"></span>
-          <p class="tl-tag">Montée en compétence collective</p>
-          <h3>Figma</h3>
-          <p>A été le premier test de management : former, accompagner, ancrer un usage à l'échelle d'une équipe entière.</p>
-        </div>
-        <div class="tl-item">
-          <span class="tl-dot" aria-hidden="true"></span>
-          <p class="tl-tag">Deuxième logiciel livré</p>
-          <h3>CSCA</h3>
-          <p>A remplacé un fichier Excel par un outil qui recense les comptes à transformer et recommande la bonne offre au conseiller.</p>
-        </div>
-        <div class="tl-item">
-          <span class="tl-dot" aria-hidden="true"></span>
-          <p class="tl-tag">Entrepreneuriat</p>
-          <h3>Solayia</h3>
-          <p>A testé la méthode sans le filet d'un employeur : jusqu'au premier client, ou nulle part.</p>
-        </div>
-        <div class="tl-item">
-          <span class="tl-dot" aria-hidden="true"></span>
-          <p class="tl-tag">Discipline personnelle</p>
-          <h3>KevinOS</h3>
-          <p>A retourné la méthode sur soi-même — la même rigueur, appliquée sans personne pour l'exiger.</p>
-        </div>
-        <div class="tl-item is-future">
-          <span class="tl-dot" aria-hidden="true"></span>
-          <p class="tl-tag">Prochaine étape</p>
-          <h3>Management</h3>
-          <p>Reste la seule chose que cette trajectoire n'a pas encore testée à pleine échelle : une équipe, confiée dans la durée.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       10 · MES VALEURS
-       ========================================================================== -->
-  <section class="section alt" id="valeurs">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">11 · Mes valeurs</p>
-        <h2 class="sec-title">Huit mots, huit preuves déjà données plus haut.</h2>
-      </div>
-
-      <div class="values-grid reveal-stagger">
-        <div class="value-cell"><h3>Engagement</h3><p>Solayia construit sur le temps personnel, sans commande ni filet.</p></div>
-        <div class="value-cell"><h3>Responsabilité</h3><p>Porter un chantier CSCA de l'audit jusqu'à la mise en œuvre, pas jusqu'à la recommandation.</p></div>
-        <div class="value-cell"><h3>Initiative</h3><p>Impulsion Marketing : jamais demandé, devenu indispensable.</p></div>
-        <div class="value-cell"><h3>Innovation</h3><p>Choisir l'IA agentique avant qu'elle ne devienne un standard de poste.</p></div>
-        <div class="value-cell"><h3>Exigence</h3><p>Refuser qu'un outil Figma reste confidentiel : le rendre standard, ou recommencer.</p></div>
-        <div class="value-cell"><h3>Esprit d'équipe</h3><p>Huit ans où la performance individuelle n'a jamais compté sans la collective.</p></div>
-        <div class="value-cell"><h3>Leadership</h3><p>Être le premier à s'exposer quand une mission se complique — appris sur le terrain, pas en formation.</p></div>
-        <div class="value-cell"><h3>Transmission</h3><p>Former une équipe entière à un nouvel outil, puis s'effacer pour qu'elle en soit autonome.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       11 · MA PHILOSOPHIE
-       ========================================================================== -->
-  <section class="section" id="philosophie">
-    <div class="wrap">
-      <div class="section-head reveal">
-        <p class="eyebrow">12 · Ma philosophie</p>
-        <h2 class="sec-title">Quelques convictions, en quelques mots.</h2>
-      </div>
-
-      <div class="quotes-grid reveal-stagger">
-        <article class="quote-card">
-          <span class="qmark">“</span>
-          <p>Une habitude n'est qu'un problème auquel plus personne ne prête attention.</p>
-          <p class="qmeta">Sur les habitudes</p>
-        </article>
-        <article class="quote-card">
-          <span class="qmark">“</span>
-          <p>La technologie est un moyen. Jamais une finalité.</p>
-          <p class="qmeta">Sur les outils</p>
-        </article>
-        <article class="quote-card">
-          <span class="qmark">“</span>
-          <p>Je ne choisis jamais une technologie. Je choisis un problème.</p>
-          <p class="qmeta">Sur la méthode</p>
-        </article>
-        <article class="quote-card">
-          <span class="qmark">“</span>
-          <p>L'innovation n'est pas une question d'outils. C'est une question d'usages.</p>
-          <p class="qmeta">Sur l'innovation</p>
-        </article>
-        <article class="quote-card">
-          <span class="qmark">“</span>
-          <p>Un outil adopté par une seule personne n'a rien changé. Il ne change quelque chose que le jour où l'équipe entière s'en empare.</p>
-          <p class="qmeta">Sur le collectif</p>
-        </article>
-        <article class="quote-card">
-          <span class="qmark">“</span>
-          <p>Je ne cherche pas un poste. Je cherche à avoir davantage d'impact.</p>
-          <p class="qmeta">Sur l'ambition</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       12 · CONCLUSION
+       03 · LA CONCLUSION
        ========================================================================== -->
   <section class="section conclusion-section" id="conclusion">
     <div class="conclusion-inner">
-      <p class="conclusion-eyebrow reveal">Pour conclure</p>
+      <p class="conclusion-eyebrow reveal">03 · La conclusion</p>
       <h2 class="reveal">Ce dossier n'avait qu'un objectif : être digne des équipes qu'on pourrait me confier.</h2>
+
+      <div class="tag-row reveal-stagger">
+        <span>Armée</span><span class="arrow">→</span><span>Reconversion</span><span class="arrow">→</span><span>Crédit Agricole</span><span class="arrow">→</span><span>Initiative</span><span class="arrow">→</span><span>Impulsion Marketing</span><span class="arrow">→</span><span>Figma</span><span class="arrow">→</span><span>CSCA</span><span class="arrow">→</span><span>Solayia</span><span class="arrow">→</span><span>KevinOS</span><span class="arrow">→</span><span>Management</span>
+      </div>
+
       <p class="lead-text reveal">
         Comprendre un problème avant qu'il ne soit formulé. Fédérer des data analystes, des développeurs et des chargés IA autour d'une solution commune.
         La construire, l'accompagner jusqu'à l'adoption, et créer une <strong>valeur qui dure</strong> bien après le lancement.
         C'est ce que ce dossier a tenté de démontrer, pas seulement d'affirmer.
       </p>
-      <p class="lead-text reveal">Le poste de Responsable d'unité péri-informatique au Crédit Agricole Toulouse 31 est exactement ce terrain : une équipe technique plurielle, à faire grandir et à orienter vers l'impact. La suite se discute volontiers en entretien.</p>
+      <p class="lead-text reveal">Le poste de Responsable d'unité péri-informatique au Crédit Agricole Toulouse 31 est exactement ce terrain. La suite se discute volontiers en entretien.</p>
 
       <div class="signature-block reveal">
         <span class="sig">Kevin Dolié</span>
@@ -2219,7 +1248,7 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
 
 <script>
 /* ==========================================================================
-   18. JAVASCRIPT — vanilla, sans dépendance
+   09. JAVASCRIPT — vanilla, sans dépendance
    ========================================================================== */
 (function(){
   "use strict";
@@ -2327,7 +1356,7 @@ footer.site-footer .f-links a:hover{ color:var(--blue); }
   }, { passive:true });
   updateActiveNav();
 
-  /* --- Compteurs animés (ex : 80 %) --- */
+  /* --- Compteur animé (80 %) --- */
   var counters = document.querySelectorAll('[data-count]');
   function animateCounter(el){
     var target = parseInt(el.getAttribute('data-count'), 10) || 0;
