@@ -179,21 +179,6 @@ h1, h2, h3, h4{
 .tag-row span.arrow{ background:none; border:none; padding:9px 0; color:var(--grey-400); font-weight:400; }
 .tag-row.is-green span{ background:var(--green-soft); border-color:var(--green-line); color:var(--green-deep); }
 
-.stat-card{
-  background:var(--ink); color:var(--white); border-radius:var(--r-lg);
-  padding:34px 32px; position:relative; overflow:hidden; max-width:600px; margin:28px 0;
-}
-.stat-card::after{
-  content:""; position:absolute; right:-40px; top:-40px; width:180px; height:180px;
-  border-radius:50%; background:radial-gradient(circle, rgba(15,169,104,.35), transparent 70%);
-}
-.stat-card .stat-number{
-  font-family:var(--f-display); font-weight:800; font-size:clamp(46px, 5vw, 60px); line-height:1;
-  background:linear-gradient(100deg, #fff 40%, var(--green-bright) 110%);
-  -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
-}
-.stat-card .stat-label{ margin-top:12px; font-size:15px; color:rgba(255,255,255,.78); max-width:460px; position:relative; line-height:1.6; }
-
 .ca-cards{ display:grid; grid-template-columns:repeat(3, 1fr); gap:22px; margin-bottom:26px; }
 @media (max-width:860px){ .ca-cards{ grid-template-columns:1fr; } }
 .ca-card{
@@ -528,9 +513,6 @@ h1, h2, h3, h4{
   .signature-block .role{ color:var(--grey-600) !important; }
   .mgmt-statement{ background:var(--grey-50) !important; color:var(--ink) !important; border:1px solid var(--grey-200); }
   .mgmt-statement .signature-line{ color:var(--green-deep) !important; }
-  .stat-card{ background:var(--grey-50) !important; color:var(--ink) !important; border:1px solid var(--grey-200); }
-  .stat-card .stat-number{ -webkit-text-fill-color:var(--blue-deep) !important; background:none !important; color:var(--blue-deep) !important; }
-  .stat-card .stat-label{ color:var(--ink-soft) !important; }
   .pipeline{ overflow:visible; }
   .pipeline-step:last-child{ background:var(--grey-50) !important; border-color:var(--grey-300) !important; }
   .pipeline-step:last-child h4{ color:var(--ink) !important; }
@@ -596,7 +578,7 @@ h1, h2, h3, h4{
     </div>
 
     <p class="home-footer-note">
-      <span>Kevin Dolié — Dossier de transformation, {{YEAR}}</span>
+      <span>Kevin Dolié — Dossier de transformation, <span class="year">2026</span></span>
       <a href="mailto:kevindolie1@gmail.com">kevindolie1@gmail.com</a>
     </p>
   </div>
@@ -616,10 +598,10 @@ h1, h2, h3, h4{
     <div class="wrap">
       <p class="eyebrow">Chapitre 01</p>
       <h2 id="adn-title" class="sec-title">Une histoire, pas un CV.</h2>
-      <p class="sec-lede">Huit ans à diriger des hommes sur le terrain. Trois ans, depuis, à construire des outils qu'une banque utilise encore aujourd'hui. Une seule méthode : voir le problème avant qu'on me le signale, et le résoudre jusqu'à ce qu'il disparaisse.</p>
+      <p class="sec-lede">Huit à dix ans dans l'Armée de Terre, au génie. Deux ans et demi, depuis avril 2024, au Crédit Agricole Toulouse 31. Une seule méthode, dans les deux mondes : observer avant d'agir, et me juger sur ce que je livre.</p>
 
       <div class="narrative-block">
-        <p>Jusqu'à 150 personnes sous ma responsabilité : le management, je l'ai appris dans les formations de chef militaire, en situation tendue et sous contrainte réelle — pas sur les bancs d'une école. J'y ai appris qu'un ordre mal préparé coûte une mission, et qu'un chef ne se juge pas sur ses intentions mais sur ce qu'il livre. En quittant l'uniforme pour le Crédit Agricole, j'ai gardé ce réflexe et je l'ai tourné vers le code. Titulaire d'un titre de développeur web, sans diplôme d'ingénieur, j'ai conçu et livré <strong>CSCA</strong>, un logiciel qui recommande au conseiller l'offre la plus pertinente pour chaque client — validé par la sécurité et la conformité, toujours en production aujourd'hui. J'ai construit l'outil qui a mis fin aux demandes marketing non priorisées : il est aujourd'hui utilisé par 100 % des équipes marketing. J'ai formé une équipe de 8 personnes, jusqu'à l'autonomie complète, sur un outil qu'elle ne connaissait pas — sceptique au départ, convaincue par un gain de temps concret et par une compétence qui se valorise sur le marché. Trois fois, personne ne me l'avait demandé.</p>
+        <p>Sapeur, chef d'équipe, chef de groupe, armurier, pilote de véhicule blindé, chef de camp : des fonctions différentes, dont certaines m'ont amené à coordonner jusqu'à 150 personnes sur des missions précises, notamment à Djibouti et au Mali. Ce n'était pas un commandement hiérarchique permanent, mais une responsabilité opérationnelle réelle, sous contrainte, où un ordre mal préparé a un coût. En quittant l'uniforme, j'ai obtenu un titre professionnel de développeur web et mobile (DWWM) à l'AFPA, puis rejoint le Crédit Agricole Toulouse 31 comme Analyste Webmaster / Webdeveloper au sein du marketing et de l'E-Business Factory. J'y ai contribué à la conception et au développement de <strong>CSCA</strong>, un logiciel qui recommande au conseiller l'offre la plus pertinente pour chaque client — validé par la sécurité et la conformité, toujours en production. J'ai participé à l'outil qui structure aujourd'hui les demandes marketing, utilisé par l'ensemble des équipes. J'ai contribué à former une équipe de 8 personnes sur Figma, sceptique au départ, convaincue par un gain de temps concret. En parallèle, j'ai accompagné des webmasters, contribué à des campagnes marketing, et tenu un rôle proche d'un Product Owner sur plusieurs chantiers.</p>
       </div>
 
       <p class="eyebrow sub-head">Ma méthode, inchangée depuis l'armée</p>
@@ -627,25 +609,20 @@ h1, h2, h3, h4{
         <span>Observer</span><span class="arrow">→</span><span>Comprendre</span><span class="arrow">→</span><span>Construire</span><span class="arrow">→</span><span>Mesurer</span><span class="arrow">→</span><span>Améliorer</span><span class="arrow">↻</span>
       </div>
 
-      <div class="stat-card">
-        <span class="stat-number" data-count="80" data-suffix="%">0%</span>
-        <p class="stat-label">des projets que j'ai menés au Crédit Agricole sont partis d'un constat de terrain, pas d'une commande.</p>
-      </div>
+      <p class="pull-quote">La plupart des projets que j'ai menés au Crédit Agricole sont partis d'un constat de terrain, pas d'une commande — et j'y ai toujours été un contributeur parmi d'autres, jamais seul.</p>
 
-      <p class="pull-quote">Je ne choisis jamais une technologie. Je choisis un problème.</p>
+      <p class="pull-quote">Je ne suis pas passionné par la technologie. Je suis passionné par les problèmes à résoudre — la technologie reste un moyen, pas une fin.</p>
 
       <p class="eyebrow is-green sub-head">Pourquoi ce poste, pourquoi moi</p>
-      <p class="sec-lede">Cette unité est née développeurs et vient d'hériter de la data et de l'IA. Ce qui lui manque n'est pas une compétence technique de plus — c'est quelqu'un pour aligner des personnes, donner une direction claire, et faire tenir une méthode dans la durée. C'est précisément ce que j'apporte :</p>
+      <p class="sec-lede">Cette unité élargit son périmètre à la data et à l'IA, après avoir longtemps été centrée sur le développement. Ce que je proposerais d'apporter n'est pas une compétence technique de plus, mais la capacité à aligner des profils différents, donner une direction claire, et faire tenir une méthode dans la durée :</p>
 
       <div class="compact-grid">
-        <div class="item"><strong>Gérer l'humain</strong><p>Jusqu'à 150 personnes encadrées sur le terrain, sous pression réelle. Une équipe entière formée sur Figma, de zéro à l'autonomie complète.</p></div>
-        <div class="item"><strong>Vision du digital</strong><p>Comprendre où va la banque — IA native, conseillers augmentés, agents autonomes. Chez Solayia, co-fondée avec un associé, j'ai conçu un agent IA qui gère pour nos clients tout le processus de la prospection jusqu'à la livraison — site web, fiche et avis Google, réseaux sociaux. Je ne découvre pas le sujet, je le pratique.</p></div>
-        <div class="item"><strong>Process éprouvé</strong><p>Une méthode unique, appliquée sans changer à l'armée et au Crédit Agricole — avec les mêmes résultats à chaque fois.</p></div>
+        <div class="item"><strong>Gérer l'humain</strong><p>Coordination de missions jusqu'à 150 personnes sur le terrain, sous contrainte réelle. Contribution à la formation d'une équipe de 8 personnes sur Figma, jusqu'à l'autonomie.</p></div>
+        <div class="item"><strong>Vision du digital</strong><p>Comprendre où va la banque — IA native, conseillers augmentés, agents autonomes. Chez Solayia, co-fondée avec un associé, j'ai conçu la partie automatisée d'un agent IA qui prend en charge la prospection jusqu'à la livraison (site web, fiche et avis Google, réseaux sociaux) ; mon associé assure la relation client au quotidien.</p></div>
+        <div class="item"><strong>Process éprouvé</strong><p>Une méthode unique, appliquée sans changer à l'armée et au Crédit Agricole : observer, comprendre, construire, mesurer, améliorer.</p></div>
       </div>
 
-      <p class="sec-lede">Ce n'est pas une intuition : des missions déjà confiées au-delà de mon poste et un retour hiérarchique qui l'a confirmé en sont la preuve.</p>
-
-      <p class="sec-lede">Solayia, co-fondée avec un associé, fonctionne aujourd'hui de façon automatisée : elle ne me prend aucun temps, et je reste disponible à 100 % pour le Crédit Agricole. Plutôt que d'attendre qu'un nouvel arrivant apporte un regard neuf une fois, à son arrivée, la banque bénéficie ainsi en permanence de quelqu'un en prise directe avec le marché et l'IA.</p>
+      <p class="sec-lede">Ce n'est pas qu'une intuition : des missions déjà confiées au-delà de mon poste, un retour hiérarchique qui l'a confirmé, et une activité entrepreneuriale menée en parallèle — sur mon temps libre, sans conflit avec mon engagement au Crédit Agricole — en sont des indices.</p>
 
       <p class="pull-quote is-green">Un outil adopté par une seule personne n'a rien changé. Il change quelque chose le jour où l'équipe entière s'en empare.</p>
     </div>
@@ -665,8 +642,8 @@ h1, h2, h3, h4{
   <div class="overlay-body">
     <div class="wrap">
       <p class="eyebrow">Chapitre 02</p>
-      <h2 id="service-title" class="sec-title">Ce que j'ai déjà fait, ce que je ferais à la tête de ce service.</h2>
-      <p class="sec-lede">Trois chantiers au Crédit Agricole, une seule méthode — et une vision concrète pour l'unité péri-informatique visée : data, développement, IA.</p>
+      <h2 id="service-title" class="sec-title">Ce que j'ai déjà construit, ce que je proposerais à la tête de ce service.</h2>
+      <p class="sec-lede">Trois chantiers au Crédit Agricole, une seule méthode — et une proposition pour accompagner l'évolution de l'unité péri-informatique vers un périmètre développement, data et IA.</p>
 
       <p class="eyebrow sub-head">Preuves au Crédit Agricole</p>
       <div class="ca-cards">
@@ -677,8 +654,8 @@ h1, h2, h3, h4{
             <p>Les équipes marketing multipliaient les demandes ponctuelles, sans visibilité ni priorisation partagée.</p>
           </div>
           <div class="ca-block">
-            <span class="lbl">Solution & impact</span>
-            <p>Conception et déploiement d'un outil de pilotage qui structure et priorise les sollicitations — aujourd'hui utilisé par 100 % des équipes marketing.</p>
+            <span class="lbl">Ma contribution</span>
+            <p>Participation à la conception et au développement d'un outil de pilotage qui structure et priorise les sollicitations, aux côtés de l'équipe projet — aujourd'hui utilisé par 100 % des équipes marketing.</p>
           </div>
         </article>
         <article class="ca-card">
@@ -688,8 +665,8 @@ h1, h2, h3, h4{
             <p>Les maquettes circulaient en fichiers statiques, sans version partagée.</p>
           </div>
           <div class="ca-block">
-            <span class="lbl">Solution & impact</span>
-            <p>Formation et accompagnement de 8 personnes, sceptiques au départ, jusqu'à l'autonomie complète — convaincues par un gain de temps concret et une compétence valorisable sur le marché. Figma est passé d'outil confidentiel à standard d'équipe.</p>
+            <span class="lbl">Ma contribution</span>
+            <p>Identification du besoin, formation et accompagnement d'une équipe de 8 personnes, sceptique au départ, jusqu'à l'autonomie — convaincue par un gain de temps concret. Figma est passé d'outil confidentiel à standard d'équipe.</p>
           </div>
         </article>
         <article class="ca-card">
@@ -699,57 +676,75 @@ h1, h2, h3, h4{
             <p>Le recensement des comptes à transformer tenait sur un fichier Excel, sans aide à la décision pour le conseiller.</p>
           </div>
           <div class="ca-block">
-            <span class="lbl">Solution & impact</span>
-            <p>Logiciel conçu, développé et livré, validé par la sécurité et la conformité avant sa mise en production : il recense ces comptes et recommande la meilleure offre.</p>
+            <span class="lbl">Ma contribution</span>
+            <p>Conception et développement d'un logiciel, validé par la sécurité et la conformité avant sa mise en production : il recense ces comptes et recommande la meilleure offre.</p>
           </div>
         </article>
       </div>
-      <p class="pull-quote">Aucun de ces trois chantiers n'était au planning avant d'être repéré sur le terrain.</p>
+      <p class="pull-quote">Trois chantiers nés d'un constat de terrain plutôt que d'une commande — et menés aux côtés de collègues, jamais seul.</p>
 
-      <p class="eyebrow is-green sub-head">Le constat de départ</p>
-      <p class="sec-lede">Aujourd'hui, le métier exprime un besoin et l'équipe développe — sans vision process. Résultat : des micro-applications dispersées, qui ne couvrent jamais toute la chaîne de production. Une réécriture importante a eu lieu récemment, à l'occasion d'une migration de serveur : c'est le bon moment pour repartir sur de bonnes bases, avec un process clair et optimisé où chaque étape a une réelle valeur.</p>
+      <p class="eyebrow is-green sub-head">Le contexte</p>
+      <p class="sec-lede">Le périmètre de l'unité évolue : historiquement centré sur le développement, il intègre désormais des activités de data analyse et d'intelligence artificielle. Cette complémentarité est une réelle opportunité — à condition de ne pas considérer ces expertises comme interchangeables. C'est dans ce contexte que je situe ma candidature : non pas remplacer un responsable technique, mais contribuer à structurer une unité pluridisciplinaire.</p>
 
-      <p class="eyebrow is-green sub-head">Ma vision de ce service</p>
-      <h3 style="font-size:21px; margin-bottom:14px;">Un filtre avant le code.</h3>
-      <p class="sec-lede">Les rôles de chargé d'organisation data et IA et de data product manager sont déjà validés dans la nouvelle organisation. Ma contribution n'est pas de les inventer, mais de les faire vivre au quotidien : chaque besoin qualifié avant d'être construit — jamais l'inverse — pour arrêter la multiplication de micro-applications et remettre un process unique au centre.</p>
+      <p class="eyebrow is-green sub-head">Ma vision pour l'unité</p>
+      <p class="sec-lede">Une unité qui transforme les besoins métiers en solutions utiles, fiables, sécurisées et mesurables, en mobilisant les bonnes compétences au bon moment — sans présenter l'IA comme une réponse systématique.</p>
+
+      <div class="compact-grid">
+        <div class="item"><strong>Développement</strong><p>Créer, faire évoluer et maintenir les outils : compréhension du besoin, qualité des livrables, documentation, sécurité, intégration au système d'information, maîtrise de la dette technique.</p></div>
+        <div class="item"><strong>Data</strong><p>Mieux comprendre l'activité pour faciliter la décision : qualité des données, fiabilité des analyses, indicateurs pertinents, gouvernance, traçabilité.</p></div>
+        <div class="item"><strong>Intelligence artificielle</strong><p>Automatiser et faciliter l'accès à l'information, quand le cas d'usage le justifie : confidentialité, sécurité, conformité, supervision humaine, mesure des résultats.</p></div>
+      </div>
+
+      <p class="sec-lede">Un besoin peut appeler une amélioration de process, un développement classique, une analyse de données ou une solution d'IA : le rôle du manager est d'aider à orienter chaque demande vers la réponse la plus pertinente — dans le respect des dispositifs de gouvernance, risques, sécurité et conformité déjà en place.</p>
+
+      <p class="eyebrow sub-head">Une méthode de fonctionnement — ma proposition</p>
+      <p class="sec-lede">Voici le modèle que je proposerais, à construire et ajuster avec les pratiques et la gouvernance existantes :</p>
 
       <div class="pipeline">
-        <div class="pipeline-step"><span class="pnum">01</span><h4>Recueillir</h4><p>Un chargé d'organisation data et IA récolte le besoin et ouvre le spectre à toute la chaîne de production concernée.</p></div>
-        <div class="pipeline-step"><span class="pnum">02</span><h4>Qualifier</h4><p>Quatre options : développement logiciel, cas d'usage data, mise en place d'un process data, ou amélioration d'un process existant.</p></div>
-        <div class="pipeline-step"><span class="pnum">03</span><h4>Exécuter</h4><p>Le bon profil prend le relais : développeur, data analyste, ou chargé d'usages digitaux.</p></div>
-        <div class="pipeline-step"><span class="pnum">04</span><h4>Valider</h4><p>Chaque livrable est validé par un data product manager avant sa mise en production.</p></div>
+        <div class="pipeline-step"><span class="pnum">01</span><h4>Recueillir</h4><p>Clarifier le besoin avec le métier et identifier les parties prenantes concernées.</p></div>
+        <div class="pipeline-step"><span class="pnum">02</span><h4>Qualifier</h4><p>Évaluer la valeur métier et la faisabilité : développement, cas d'usage data, process, ou amélioration continue.</p></div>
+        <div class="pipeline-step"><span class="pnum">03</span><h4>Réaliser</h4><p>Mobiliser le bon profil — développeur, data analyste, ou chargé d'usages digitaux — et valider avec les parties prenantes compétentes.</p></div>
+        <div class="pipeline-step"><span class="pnum">04</span><h4>Mesurer</h4><p>Déployer, accompagner l'adoption, et mesurer les résultats pour ajuster.</p></div>
       </div>
 
-      <p class="sec-lede"><strong>Exemple :</strong> une demande de reporting Excel devient une amélioration de process data confiée à un data analyste — pas une nouvelle micro-application qui s'ajoute aux autres.</p>
+      <p class="pull-quote is-green">Une unité de résolution de problèmes, dont le développement, la donnée et l'IA sont trois outils complémentaires — pas interchangeables.</p>
 
-      <div class="story-columns">
-        <div class="story-col">
-          <span class="tag">100 premiers jours</span>
-          <p>Cartographier les besoins réels remontés par le métier. Mettre en place le rôle de chargé d'organisation data et IA. Traiter un premier cas selon les quatre options, jusqu'à la validation.</p>
-        </div>
-        <div class="story-col is-blue">
-          <span class="tag">À 2-3 ans</span>
-          <p>Un process unique qui a remplacé les micro-applications dispersées. Chaque demande est qualifiée avant d'être construite. L'industrialisation devient un réflexe, pas une exception.</p>
-        </div>
+      <p class="eyebrow is-green sub-head">Comment je manage</p>
+      <p class="sec-lede">Mon expérience passée m'a appris à coordonner des profils différents sous contrainte. Pour ce poste, voici les principes que je proposerais de mettre en œuvre :</p>
+
+      <div class="compact-grid">
+        <div class="item"><strong>Donner du sens</strong><p>Expliquer pourquoi nous faisons les choses, et ce que nous cherchons à améliorer — pas seulement ce qu'il faut faire.</p></div>
+        <div class="item"><strong>Faire confiance et responsabiliser</strong><p>Laisser chaque expert exercer son métier, avec un cadre clair plutôt qu'un contrôle permanent.</p></div>
+        <div class="item"><strong>Accompagner et développer</strong><p>Identifier les compétences de chacun, favoriser leur progression, faciliter les échanges entre les métiers.</p></div>
+        <div class="item"><strong>Piloter et arbitrer</strong><p>Fixer des priorités, prendre des décisions, et mesurer les résultats pour rendre compte.</p></div>
       </div>
-      <p class="pull-quote is-green">Ce n'est pas une équipe de développeurs à qui l'on a ajouté de la data et de l'IA. C'est une unité de résolution de problèmes, dont le développement, la donnée et l'IA sont les trois outils.</p>
 
-      <p class="eyebrow sub-head">Le management que ça demande</p>
-      <p class="sec-lede">Diriger une unité péri-informatique n'exige pas de maîtriser chaque discipline mieux que ceux qui la pratiquent — mais d'aligner des métiers qui ne raisonnent pas de la même façon vers un même résultat. Un data analyste mesure, un développeur construit, un chargé d'usages digitaux expérimente : le rôle du manager est de faire se répondre ces logiques, pas de les uniformiser.</p>
       <div class="mgmt-statement">
         <p>Le management est une responsabilité.<br>Pas un statut.</p>
-        <p class="signature-line">— Testée sur un cursus Figma, prête pour une unité data / dev / IA</p>
+        <p class="signature-line">— Je ne cherche pas à devenir le meilleur technicien de l'équipe, mais le manager qui permet à chaque expertise de contribuer à un objectif commun.</p>
       </div>
 
-      <p class="eyebrow is-green sub-head">Et demain : Banque 2030</p>
-      <p class="sec-lede">IA intégrée nativement, conseillers augmentés par la donnée, agents autonomes sur les demandes simples, personnalisation, transformation continue : voilà la direction que prennent les banques de réseau. Y contribuer ne se fait pas sur une slide, mais projet après projet — exactement comme Impulsion Marketing, Figma et CSCA l'ont été.</p>
-      <div class="tag-row is-green">
-        <span>IA native</span><span>Automatisation</span><span>Conseillers augmentés</span><span>Agents IA</span><span>Personnalisation</span><span>Transformation continue</span>
+      <p class="eyebrow is-green sub-head">Mes 100 premiers jours</p>
+      <p class="sec-lede">Une approche en trois temps, pour construire un diagnostic partagé avant d'agir — sans bouleverser l'organisation en place.</p>
+
+      <div class="pipeline">
+        <div class="pipeline-step"><span class="pnum">J1–30</span><h4>Comprendre</h4><p>Rencontrer chaque collaborateur, comprendre les projets en cours, les priorités déjà engagées et les points de friction.</p></div>
+        <div class="pipeline-step"><span class="pnum">J31–60</span><h4>Structurer</h4><p>Clarifier les priorités avec les équipes, proposer des indicateurs adaptés, identifier quelques actions à valeur rapide.</p></div>
+        <div class="pipeline-step"><span class="pnum">J61–100</span><h4>Mettre en mouvement</h4><p>Mettre en œuvre les premières actions validées, évaluer les résultats, ajuster, et présenter une feuille de route pour la suite.</p></div>
       </div>
+
+      <p class="eyebrow sub-head">Indicateurs que je proposerais de suivre</p>
+      <p class="sec-lede">Un nombre volontairement limité d'indicateurs, à affiner avec les équipes — des pistes de pilotage, pas des résultats déjà obtenus :</p>
+      <div class="tag-row">
+        <span>Satisfaction des métiers</span><span>Délai de traitement</span><span>Respect des engagements</span><span>Adoption des solutions</span><span>Fiabilité des livrables</span><span>Développement des compétences</span><span>Soutenabilité de la charge</span>
+      </div>
+
+      <p class="eyebrow is-green sub-head">Et demain</p>
+      <p class="sec-lede">IA intégrée avec discernement, conseillers augmentés par la donnée, automatisation des tâches à faible valeur ajoutée, transformation continue : une direction que prennent de nombreuses banques de réseau. Y contribuer ne se joue pas sur une slide, mais projet après projet.</p>
 
       <p class="eyebrow sub-head">Le chemin qui m'y mène</p>
       <div class="tag-row">
-        <span>Armée</span><span class="arrow">→</span><span>Reconversion</span><span class="arrow">→</span><span>Crédit Agricole</span><span class="arrow">→</span><span>Initiative</span><span class="arrow">→</span><span>Impulsion Marketing</span><span class="arrow">→</span><span>Figma</span><span class="arrow">→</span><span>CSCA</span><span class="arrow">→</span><span>Management</span>
+        <span>Armée (génie)</span><span class="arrow">→</span><span>Reconversion DWWM</span><span class="arrow">→</span><span>Crédit Agricole</span><span class="arrow">→</span><span>Impulsion Marketing</span><span class="arrow">→</span><span>Figma</span><span class="arrow">→</span><span>CSCA</span><span class="arrow">→</span><span>Management</span>
       </div>
     </div>
   </div>
@@ -768,10 +763,10 @@ h1, h2, h3, h4{
   <div class="overlay-body">
     <div class="conclusion-wrap">
       <p class="conclusion-eyebrow">Chapitre 03</p>
-      <h2 id="conclusion-title">Cette unité vient d'hériter de la data et de l'IA. Elle n'a pas besoin d'un développeur de plus — elle a besoin de quelqu'un pour l'aligner.</h2>
-      <p class="lead-text">Huit ans à diriger jusqu'à 150 personnes sous pression réelle. Trois ans à concevoir et livrer, au Crédit Agricole, des outils encore en production aujourd'hui — et à former une équipe de 8 personnes jusqu'à l'autonomie complète. Je co-dirige aussi Solayia, une entreprise automatisée qui ne prend rien sur mon temps : j'y ai conçu un agent IA qui gère toute la chaîne, de la prospection à la livraison, pour des clients réels. Une seule méthode, appliquée sans jamais changer.</p>
-      <p class="lead-text">Gérer l'humain. Porter une vision claire du digital. Appliquer un process éprouvé. C'est exactement ce que demande ce poste — et c'est exactement ce que j'apporte.</p>
-      <p class="lead-text">Le poste de Responsable d'unité péri-informatique au Crédit Agricole Toulouse 31 est exactement ce terrain. <strong>La suite se discute en entretien.</strong></p>
+      <h2 id="conclusion-title">Le périmètre de cette unité évolue vers le développement, la data et l'IA. Je souhaite accompagner cette évolution comme manager, pas comme technicien de plus.</h2>
+      <p class="lead-text">Huit à dix ans à coordonner des missions exigeantes, parfois jusqu'à 150 personnes, dans l'Armée de Terre. Deux ans et demi à concevoir et développer, au Crédit Agricole, des outils encore utilisés aujourd'hui — et à contribuer à la formation d'une équipe de 8 personnes jusqu'à l'autonomie. Je co-dirige aussi Solayia avec un associé : ma part y est largement automatisée, et cette activité reste compatible avec mon engagement à temps plein. Une seule méthode, dans les deux mondes : observer, comprendre, construire, mesurer, améliorer.</p>
+      <p class="lead-text">Donner du sens, responsabiliser les experts, accompagner la montée en compétences, arbitrer les priorités : c'est ce que je proposerais d'apporter à cette unité, en m'appuyant sur ce qui existe déjà et sur les compétences en place.</p>
+      <p class="lead-text">Le poste de Responsable d'unité péri-informatique au Crédit Agricole Toulouse 31 est le terrain où je souhaite mettre cette méthode au service d'une réussite collective. <strong>La suite se discute volontiers en entretien.</strong></p>
 
       <div class="signature-block">
         <span class="sig">Kevin Dolié</span>
@@ -789,9 +784,9 @@ h1, h2, h3, h4{
   "use strict";
 
   /* --- Année dynamique --- */
-  var noteEl = document.querySelector('.home-footer-note span');
-  if (noteEl) {
-    noteEl.textContent = noteEl.textContent.replace('{{YEAR}}', new Date().getFullYear());
+  var yearEl = document.querySelector('.home-footer-note .year');
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
   }
 
   /* --- Bouton d'impression / export PDF --- */
@@ -838,33 +833,6 @@ h1, h2, h3, h4{
     if (e.key !== 'Escape') return;
     document.querySelectorAll('.overlay.is-open').forEach(function(el){ closeOverlay(el); });
   });
-
-  /* --- Compteur animé (80 %), déclenché à l'ouverture du chapitre 1 --- */
-  var counted = false;
-  function animateCounter(el){
-    var target = parseInt(el.getAttribute('data-count'), 10) || 0;
-    var suffix = el.getAttribute('data-suffix') || '';
-    var duration = 1200;
-    var start = null;
-    function step(timestamp){
-      if (!start) start = timestamp;
-      var progress = Math.min((timestamp - start) / duration, 1);
-      var eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.round(eased * target) + suffix;
-      if (progress < 1) window.requestAnimationFrame(step);
-      else el.textContent = target + suffix;
-    }
-    window.requestAnimationFrame(step);
-  }
-  var adnCard = document.querySelector('[data-open="adn"]');
-  if (adnCard) {
-    adnCard.addEventListener('click', function(){
-      if (counted) return;
-      counted = true;
-      var statEl = document.querySelector('#overlay-adn .stat-number');
-      if (statEl) animateCounter(statEl);
-    });
-  }
 
 })();
 </script>
