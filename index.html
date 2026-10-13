@@ -274,31 +274,7 @@ h1, h2, h3, h4{
 
 
 /* ==========================================================================
-   02. EN-TÊTE
-   ========================================================================== */
-
-.site-header{
-  position:fixed; top:0; left:0; right:0; z-index:120;
-  background:rgba(255,255,255,.82);
-  backdrop-filter:blur(14px) saturate(160%);
-  -webkit-backdrop-filter:blur(14px) saturate(160%);
-  border-bottom:1px solid var(--grey-200);
-}
-.site-header .wrap{ display:flex; align-items:center; justify-content:space-between; min-height:68px; gap:20px; }
-.brand{
-  display:inline-flex; align-items:center; gap:10px; text-decoration:none;
-  font-family:var(--f-display); font-weight:800; font-size:16px; letter-spacing:-.2px; color:var(--ink);
-}
-.brand .mark{
-  width:32px; height:32px; border-radius:9px;
-  background:linear-gradient(135deg, var(--blue) 0%, var(--blue-bright) 55%, var(--green) 130%);
-  color:var(--white); display:inline-flex; align-items:center; justify-content:center;
-  font-size:13px; font-weight:800;
-}
-
-
-/* ==========================================================================
-   03. ACCUEIL — page fixe, 3 cartes
+   02. ACCUEIL — page fixe, 3 cartes
    ========================================================================== */
 
 .home-view{
@@ -306,7 +282,7 @@ h1, h2, h3, h4{
   display:flex;
   flex-direction:column;
   justify-content:center;
-  padding:clamp(84px, 11vh, 128px) 0 40px;
+  padding:clamp(56px, 8vh, 96px) 0 40px;
   position:relative;
   overflow:hidden;
 }
@@ -414,7 +390,7 @@ h1, h2, h3, h4{
 
 
 /* ==========================================================================
-   04. OVERLAYS — contenu plein écran par chapitre
+   03. OVERLAYS — contenu plein écran par chapitre
    ========================================================================== */
 
 .overlay{
@@ -454,7 +430,7 @@ h1, h2, h3, h4{
 
 
 /* ==========================================================================
-   05. CONCLUSION (overlay sombre)
+   04. CONCLUSION (overlay sombre)
    ========================================================================== */
 
 .conclusion-wrap{
@@ -491,7 +467,7 @@ h1, h2, h3, h4{
 
 
 /* ==========================================================================
-   06. MEDIA PRINT — export PDF : affiche les 3 chapitres à la suite
+   05. MEDIA PRINT — export PDF : affiche les 3 chapitres à la suite
    ========================================================================== */
 
 @media print{
@@ -504,7 +480,7 @@ h1, h2, h3, h4{
     transition:none !important;
   }
   html, body{ background:var(--white) !important; font-size:11.5px; }
-  .site-header, .home-view{ display:none !important; }
+  .home-view{ display:none !important; }
   .overlay{
     position:static !important; visibility:visible !important; opacity:1 !important;
     transform:none !important; overflow:visible !important; height:auto !important;
@@ -539,14 +515,6 @@ h1, h2, h3, h4{
 <body>
 
 <a class="skip-link" href="#home">Aller au contenu principal</a>
-
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="#home" aria-label="Kevin Dolié — Accueil">
-      <span class="mark">KD</span>
-    </a>
-  </div>
-</header>
 
 <!-- ==========================================================================
      ACCUEIL — page fixe, 3 cartes
@@ -790,7 +758,7 @@ h1, h2, h3, h4{
 
 <script>
 /* ==========================================================================
-   07. JAVASCRIPT — vanilla, sans dépendance
+   06. JAVASCRIPT — vanilla, sans dépendance
    ========================================================================== */
 (function(){
   "use strict";
