@@ -274,38 +274,7 @@ h1, h2, h3, h4{
 
 
 /* ==========================================================================
-   02. EN-TÊTE
-   ========================================================================== */
-
-.site-header{
-  position:fixed; top:0; left:0; right:0; z-index:120;
-  background:rgba(255,255,255,.82);
-  backdrop-filter:blur(14px) saturate(160%);
-  -webkit-backdrop-filter:blur(14px) saturate(160%);
-  border-bottom:1px solid var(--grey-200);
-}
-.site-header .wrap{ display:flex; align-items:center; justify-content:space-between; min-height:68px; gap:20px; }
-.brand{
-  display:inline-flex; align-items:center; gap:10px; text-decoration:none;
-  font-family:var(--f-display); font-weight:800; font-size:16px; letter-spacing:-.2px; color:var(--ink);
-}
-.brand .mark{
-  width:32px; height:32px; border-radius:9px;
-  background:linear-gradient(135deg, var(--blue) 0%, var(--blue-bright) 55%, var(--green) 130%);
-  color:var(--white); display:inline-flex; align-items:center; justify-content:center;
-  font-size:13px; font-weight:800;
-}
-.print-btn{
-  display:inline-flex; align-items:center; gap:8px; min-height:40px; padding:9px 18px;
-  border-radius:100px; border:1.5px solid var(--grey-300); font-size:13px; font-weight:700; color:var(--ink);
-  transition:all .25s var(--ease-out);
-}
-.print-btn:hover{ border-color:var(--blue); color:var(--blue); }
-@media (max-width:560px){ .print-btn span.txt{ display:none; } .print-btn{ padding:9px; } }
-
-
-/* ==========================================================================
-   03. ACCUEIL — page fixe, 3 cartes
+   02. ACCUEIL — page fixe, 3 cartes
    ========================================================================== */
 
 .home-view{
@@ -313,7 +282,7 @@ h1, h2, h3, h4{
   display:flex;
   flex-direction:column;
   justify-content:center;
-  padding:clamp(96px, 14vh, 140px) 0 48px;
+  padding:clamp(56px, 8vh, 96px) 0 40px;
   position:relative;
   overflow:hidden;
 }
@@ -324,7 +293,7 @@ h1, h2, h3, h4{
     radial-gradient(680px 440px at 100% 0%, var(--green-soft) 0%, transparent 55%);
 }
 
-.home-intro{ margin-bottom:clamp(40px, 6vw, 64px); }
+.home-intro{ margin-bottom:clamp(28px, 4vw, 44px); }
 .home-eyebrow{
   display:inline-flex; align-items:center; gap:10px;
   font-family:var(--f-mono); font-size:12px; font-weight:700;
@@ -345,14 +314,23 @@ h1, h2, h3, h4{
   background:linear-gradient(100deg, var(--ink) 30%, var(--blue-deep) 70%, var(--blue) 100%);
   -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
 }
+.home-role{
+  margin-top:14px;
+  font-family:var(--f-mono); font-size:13px; font-weight:700; letter-spacing:2px;
+  text-transform:uppercase; color:var(--blue);
+}
 .home-quote{
-  margin-top:26px; max-width:620px; font-family:var(--f-display); font-weight:600;
+  margin-top:22px; max-width:620px; font-family:var(--f-display); font-weight:600;
   font-size:clamp(17px, 1.8vw, 21px); line-height:1.5; color:var(--ink-soft);
   padding-left:22px; border-left:3px solid var(--grey-300);
 }
 .home-quote strong{ color:var(--ink); font-weight:700; }
+.home-lede{
+  margin:18px 0 0; max-width:680px;
+  font-size:15.5px; color:var(--grey-600); line-height:1.6;
+}
 
-.hub-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; }
+.hub-grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; margin-top:clamp(24px, 3vw, 36px); }
 @media (max-width:900px){ .hub-grid{ grid-template-columns:1fr; } }
 
 .hub-card{
@@ -373,13 +351,16 @@ h1, h2, h3, h4{
 .hub-card .cover svg{ width:100%; height:100%; }
 .hub-card .cover.has-photo img{
   width:100%; height:100%; object-fit:cover; object-position:50% 20%;
-  transition:transform .5s var(--ease-out);
+  filter:grayscale(.3) contrast(1.05) brightness(1.02);
+  transition:transform .5s var(--ease-out), filter .5s var(--ease-out);
 }
-.hub-card:hover .cover.has-photo img{ transform:scale(1.04); }
+.hub-card:hover .cover.has-photo img{ transform:scale(1.04); filter:grayscale(.1) contrast(1.05) brightness(1.02); }
 .hub-card .cover.has-photo::after{
   content:""; position:absolute; inset:0;
-  background:linear-gradient(0deg, rgba(11,21,38,.28), rgba(11,21,38,0) 55%),
-             linear-gradient(100deg, rgba(11,77,162,.18), rgba(15,169,104,.14));
+  background:
+    linear-gradient(0deg, rgba(11,21,38,.32), rgba(11,21,38,0) 60%),
+    linear-gradient(115deg, rgba(11,77,162,.38), rgba(15,169,104,.30));
+  mix-blend-mode:multiply;
   pointer-events:none;
 }
 .hub-card .body{ padding:26px 24px 28px; flex:1; display:flex; flex-direction:column; }
@@ -387,7 +368,7 @@ h1, h2, h3, h4{
   font-family:var(--f-mono); font-size:11px; font-weight:700; letter-spacing:1.4px;
   text-transform:uppercase; color:var(--blue); margin-bottom:10px;
 }
-.hub-card h3{ font-size:21px; margin-bottom:10px; }
+.hub-card h3{ font-size:21px; line-height:1.25; min-height:52px; margin-bottom:10px; }
 .hub-card p{ color:var(--ink-soft); font-size:14.3px; line-height:1.6; flex:1; }
 .hub-card .cta{
   margin-top:18px; display:inline-flex; align-items:center; gap:8px;
@@ -398,16 +379,18 @@ h1, h2, h3, h4{
 .hub-card:hover .cta .chev{ transform:translateX(4px); }
 
 .home-footer-note{
-  margin-top:clamp(36px, 5vw, 56px);
+  margin-top:clamp(40px, 6vw, 64px);
+  padding-top:24px;
+  border-top:1px solid var(--grey-200);
   font-family:var(--f-mono); font-size:12px; color:var(--grey-500);
-  display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+  display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
 }
 .home-footer-note a{ color:var(--grey-600); text-decoration:none; }
 .home-footer-note a:hover{ color:var(--blue); }
 
 
 /* ==========================================================================
-   04. OVERLAYS — contenu plein écran par chapitre
+   03. OVERLAYS — contenu plein écran par chapitre
    ========================================================================== */
 
 .overlay{
@@ -447,7 +430,7 @@ h1, h2, h3, h4{
 
 
 /* ==========================================================================
-   05. CONCLUSION (overlay sombre)
+   04. CONCLUSION (overlay sombre)
    ========================================================================== */
 
 .conclusion-wrap{
@@ -484,7 +467,7 @@ h1, h2, h3, h4{
 
 
 /* ==========================================================================
-   06. MEDIA PRINT — export PDF : affiche les 3 chapitres à la suite
+   05. MEDIA PRINT — export PDF : affiche les 3 chapitres à la suite
    ========================================================================== */
 
 @media print{
@@ -497,7 +480,7 @@ h1, h2, h3, h4{
     transition:none !important;
   }
   html, body{ background:var(--white) !important; font-size:11.5px; }
-  .site-header, .print-btn, .home-view{ display:none !important; }
+  .home-view{ display:none !important; }
   .overlay{
     position:static !important; visibility:visible !important; opacity:1 !important;
     transform:none !important; overflow:visible !important; height:auto !important;
@@ -533,18 +516,6 @@ h1, h2, h3, h4{
 
 <a class="skip-link" href="#home">Aller au contenu principal</a>
 
-<header class="site-header">
-  <div class="wrap">
-    <a class="brand" href="#home">
-      <span class="mark">KD</span>
-      Kevin Dolié
-    </a>
-    <button class="print-btn" id="printBtn" type="button" aria-label="Imprimer / exporter en PDF">
-      <span aria-hidden="true">⇩</span><span class="txt">Exporter en PDF</span>
-    </button>
-  </div>
-</header>
-
 <!-- ==========================================================================
      ACCUEIL — page fixe, 3 cartes
      ========================================================================== -->
@@ -552,9 +523,11 @@ h1, h2, h3, h4{
   <div class="home-bg" aria-hidden="true"></div>
   <div class="wrap">
     <div class="home-intro">
-      <p class="home-eyebrow"><span class="dot" aria-hidden="true"></span>Candidature — Responsable d'unité péri-informatique, Crédit Agricole Toulouse 31</p>
+      <p class="home-eyebrow"><span class="dot" aria-hidden="true"></span>Dossier de transformation — Responsable d'unité péri-informatique, Crédit Agricole Toulouse 31</p>
       <h1>Kevin Dolié</h1>
+      <p class="home-role">Transformation · Data · Intelligence Artificielle · Management</p>
       <p class="home-quote">« Je ne suis pas passionné par la technologie. Je suis passionné par <strong>les problèmes à résoudre</strong>. »</p>
+      <p class="home-lede">Trois chapitres, une seule trajectoire : qui je suis, ce que je construirais à la tête de ce service, et ce que vous pouvez en attendre.</p>
     </div>
 
     <div class="hub-grid">
@@ -785,7 +758,7 @@ h1, h2, h3, h4{
 
 <script>
 /* ==========================================================================
-   07. JAVASCRIPT — vanilla, sans dépendance
+   06. JAVASCRIPT — vanilla, sans dépendance
    ========================================================================== */
 (function(){
   "use strict";
@@ -797,11 +770,6 @@ h1, h2, h3, h4{
   }
 
   /* --- Bouton d'impression / export PDF --- */
-  var printBtn = document.getElementById('printBtn');
-  if (printBtn) {
-    printBtn.addEventListener('click', function(){ window.print(); });
-  }
-
   /* --- Ouverture / fermeture des chapitres en plein écran --- */
   var overlays = {
     adn: document.getElementById('overlay-adn'),
